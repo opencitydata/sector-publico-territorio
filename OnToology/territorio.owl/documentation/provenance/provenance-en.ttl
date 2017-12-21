@@ -1,0 +1,12 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> a prov:Entity;
+	 dc:title "Vocabulario para la representación de datos de territorio (incluyendo divisiones administrativas) en España";
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "David Portolés (Idearium Consultores)".];
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "Esther Minguela (LocaliData)".];
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "José María Subero (Gobierno de Aragón)".];
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "María Jesús Fernández (Ayuntamiento de Zaragoza)".];
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "Oscar Corcho (Ontology Engineering Group - Universidad Politécnica de Madrid, LocaliData)".];
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+.

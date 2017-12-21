@@ -1,0 +1,1021 @@
+@prefix : <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> rdf:type owl:Ontology ;
+                                                                          owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> ;
+                                                                          <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/> ;
+                                                                          <http://purl.org/dc/elements/1.1/creator> "David Portolés (Idearium Consultores)"^^xsd:string ,
+                                                                                                                    "Esther Minguela (LocaliData)"^^xsd:string ,
+                                                                                                                    "José María Subero (Gobierno de Aragón)"^^xsd:string ,
+                                                                                                                    "María Jesús Fernández (Ayuntamiento de Zaragoza)"^^xsd:string ,
+                                                                                                                    "Oscar Corcho (Ontology Engineering Group - Universidad Politécnica de Madrid, LocaliData)"^^xsd:string ;
+                                                                          <http://purl.org/dc/elements/1.1/date> "2014-05-03"^^xsd:dateTime ;
+                                                                          <http://purl.org/dc/elements/1.1/identifier> "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"^^xsd:string ;
+                                                                          <http://purl.org/dc/elements/1.1/rights> "Creative Commons Attribution 4.0 International (CC BY 4.0)"^^xsd:string ;
+                                                                          <http://purl.org/dc/elements/1.1/title> "Vocabulario para la representación de datos de territorio (incluyendo divisiones administrativas) en España"@es ;
+                                                                          <http://purl.org/dc/terms/hasFormat> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html> ,
+                                                                                                               <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.owl> ;
+                                                                          <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:dateTime ;
+                                                                          <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                                                                          rdfs:comment """Este vocabulario se utiliza para la descripción de territorios en España (incluyendo divisiones administrativas y también otros conceptos que se utilizan normalmente pero no tienen entidad jurídica, como por ejemplo barrios). Reutiliza términos de varios vocabularios y modelos que actualmente se utilizan para propósitos similares (y por tanto se irá actualizando de acuerdo con la evolución de estos vocabularios), incluyendo:
+- schema.org
+- GeoSPARQL
+- GeoNames
+- DBpedia
+- Ontología Jurídica Libre
+- Modelo de direcciones de la Administración General del Estado v.2
+
+Esta ontología sufrirá cambios continuados hasta que se consiga un acuerdo suficiente sobre los términos que se incluyen en ella. También debe incluir términos definidos por comunidades autónomas y municipios (por ejemplo, entidades locales autónomas en Andalucía, juntas vecinales, concejos, pedanías, etc.)"""^^xsd:dateTime ;
+                                                                          owl:versionInfo """En esta ontología se han añadido los siguientes conceptos:
+- PartidoJudicial
+- Isla, y la referencia a su superclase dbpedia-owl:Island
+- Mancomunidad
+- AreaMetropolitana
+
+También se han añadido las siguientes propiedades:
+- cabezaDePartidoJudicial
+- capital
+- isla
+- mancomunidad
+- areaMetropolitana
+
+Asimismo, se han completado omisiones existentes en la versión anterior:
+- Algunos rangos para object properties como diseminado, provincia, etc.
+
+Y se han añadido a la documentación asociada a las juntas administrativas algunos ejemplos, como la existencia de juntas municipales y juntas vecinales """@es .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#isDefinedBy
+rdfs:isDefinedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/type
+<http://purl.org/dc/terms/type> rdf:type owl:ObjectProperty .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#areaMetropolitana
+:areaMetropolitana rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+                   rdfs:range :AreaMetropolitana ;
+                   <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:dateTime ;
+                   rdfs:comment "Área metropolitana a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+                   rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                   rdfs:label "área metropolitana"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#autonomia
+:autonomia rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+           rdfs:range :Autonomia ;
+           <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+           rdfs:comment "Autonomía (Comunidad Autónoma o Ciudad Autónoma) a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+           rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+           rdfs:label "pertenece a la autonomía"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#barrio
+:barrio rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+        rdfs:range :Barrio ;
+        <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+        rdfs:comment "Barrio al que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+        rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+        rdfs:label "pertenece al barrio"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#cabezaDePartidoJudicial
+:cabezaDePartidoJudicial rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfContains> ;
+                         rdf:type owl:FunctionalProperty ;
+                         rdfs:domain :PartidoJudicial ;
+                         rdfs:range :Municipio ;
+                         <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:dateTime ;
+                         rdfs:comment "Municipio que es cabeza del partido judicial"@es ;
+                         rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                         rdfs:label "cabeza del partido judicial"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#capital
+:capital rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfContains> ;
+         rdfs:range :Municipio ;
+         <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:dateTime ;
+         rdfs:comment "Municipio que es considerado capital de otro territorio (por ejemplo, una autonomía, provincia, comarca, etc.)"@es ;
+         rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+         rdfs:label "capital"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#comarca
+:comarca rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+         rdfs:range :Comarca ;
+         <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+         rdfs:comment "Comarca a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+         rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+         rdfs:label "pertenece a la comarca"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#diseminado
+:diseminado rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+            rdfs:range :Diseminado ;
+            <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+            rdfs:comment "Diseminado al que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+            rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+            rdfs:label "pertenece al diseminado"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#distrito
+:distrito rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+          rdfs:range :Distrito ;
+          <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+          rdfs:comment "Distrito al que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+          rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+          rdfs:label "pertenece al distrito"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#entidadColectiva
+:entidadColectiva rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+                  rdfs:range :EntidadColectiva ;
+                  <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+                  rdfs:comment "Entidad colectiva a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+                  rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                  rdfs:label "pertenece a entidad colectiva"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#entidadSingular
+:entidadSingular rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+                 rdfs:range :EntidadSingular ;
+                 <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+                 rdfs:comment "Entidad singular a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+                 rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                 rdfs:label "pertenece a entidad singular"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado
+:estado rdf:type owl:ObjectProperty ;
+        rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+        <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+        rdfs:comment """Validez del elemento en su ciclo de vida (versión). Puede ser histórico, vigente o provisional. Se definen en el esquema de conceptos http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado y toman valores:
+http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/historico
+http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente
+http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/provisional"""@es ;
+        rdfs:isDefinedBy <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ;
+        rdfs:label "estado"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#isla
+:isla rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+      <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:dateTime ;
+      rdfs:comment "Isla a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+      rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+      rdfs:label "isla"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#juntaAdministrativa
+:juntaAdministrativa rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+                     rdfs:range :JuntaAdministrativa ;
+                     <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+                     rdfs:comment "Junta Administrativa a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+                     rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                     rdfs:label "pertenece a la junta administrativa"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#mancomunidad
+:mancomunidad rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+              rdfs:range :Mancomunidad ;
+              <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:dateTime ;
+              rdfs:comment "Mancomunidad a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+              rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+              rdfs:label "mancomunidad"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio
+:municipio rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+           rdfs:range :Municipio ;
+           <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+           rdfs:comment "Municipio al que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+           rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+           rdfs:label "pertenece al municipio"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#nucleoPoblacion
+:nucleoPoblacion rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+                 rdfs:range :NucleoPoblacion ;
+                 <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+                 rdfs:comment "Núcleo de población al que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+                 rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                 rdfs:label "pertenece al núcleo de población"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#pais
+:pais rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+      rdfs:range :Pais ;
+      <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+      rdfs:comment "País al que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+      rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+      rdfs:label "pertenece al país"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#partidoJudicial
+:partidoJudicial rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+                 rdfs:range :PartidoJudicial ;
+                 <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:dateTime ;
+                 rdfs:comment "Partido judicial al que pertenece un fenómeno geográfico o una entidad administrativa"@es ,
+                              "pertenece al partido judicial"@es ;
+                 rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#provincia
+:provincia rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+           rdfs:range :Provincia ;
+           <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+           rdfs:comment "Provincia a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+           rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+           rdfs:label "pertenece a provincia"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#seccionCensal
+:seccionCensal rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+               rdfs:range :SeccionCensal ;
+               <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+               rdfs:comment <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ,
+                            "Sección censal a la que pertenece un fenómeno geográfico o una entidad administrativa"@es ;
+               rdfs:label "pertenece a la sección censal"@es .
+
+
+###  http://www.geonames.org/ontology#featureClass
+<http://www.geonames.org/ontology#featureClass> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://purl.org/dc/terms/type> .
+
+
+###  http://www.geonames.org/ontology#featureCode
+<http://www.geonames.org/ontology#featureCode> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://purl.org/dc/terms/type> .
+
+
+###  http://www.opengis.net/ont/geosparql#sfContains
+<http://www.opengis.net/ont/geosparql#sfContains> rdf:type owl:ObjectProperty .
+
+
+###  http://www.opengis.net/ont/geosparql#sfWithin
+<http://www.opengis.net/ont/geosparql#sfWithin> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ;
+                                      rdfs:comment "identificador del recurso"@es ;
+                                      rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                                      rdfs:label "identificador"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro
+:codigoMunicipioCatastro rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf <http://purl.org/dc/terms/identifier> ;
+                         <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+                         rdfs:comment "Código que asigna Catastro al Municipio, en caso de existir la relación."@es ;
+                         rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ,
+                                          <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ;
+                         rdfs:label "código del Municipio según Catastro"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE
+:codigoMunicipioINE rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf <http://purl.org/dc/terms/identifier> ;
+                    <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+                    rdfs:comment "Código del Municipio de tres dígitos del INE, definido en  http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls"@es ;
+                    rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ,
+                                     <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ;
+                    rdfs:label "código del Municipio según el INE"@es .
+
+
+###  http://www.geonames.org/ontology#countryCode
+<http://www.geonames.org/ontology#countryCode> rdf:type owl:DatatypeProperty ;
+                                               rdfs:comment "Un código de país de dos letras, de la lista ISO 3166"@es ;
+                                               rdfs:isDefinedBy <http://www.geonames.org/ontology> ;
+                                               rdfs:label "código de país ISO"@es .
+
+
+###  http://www.geonames.org/ontology#name
+<http://www.geonames.org/ontology#name> rdf:type owl:DatatypeProperty ;
+                                        rdfs:comment "El nombre con el que se conoce internacionalmente este fenómeno geográfico. No lleva asociado un valor para xml:lang"@es ;
+                                        rdfs:isDefinedBy <http://www.geonames.org/ontology> ;
+                                        rdfs:label "nombre internacional"@es .
+
+
+###  http://www.geonames.org/ontology#officialName
+<http://www.geonames.org/ontology#officialName> rdf:type owl:DatatypeProperty ;
+                                                rdfs:comment "Un nombre en el idioma oficial local"@es ;
+                                                rdfs:isDefinedBy <http://www.geonames.org/ontology> ;
+                                                rdfs:label "nombre oficial"@es .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/AdministrativeRegion
+<http://dbpedia.org/ontology/AdministrativeRegion> rdf:type owl:Class ;
+                                                   owl:equivalentClass <http://schema.org/AdministrativeArea> .
+
+
+###  http://dbpedia.org/ontology/Country
+<http://dbpedia.org/ontology/Country> rdf:type owl:Class ;
+                                      owl:equivalentClass <http://schema.org/Country> .
+
+
+###  http://dbpedia.org/ontology/District
+<http://dbpedia.org/ontology/District> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> .
+
+
+###  http://dbpedia.org/ontology/GovernmentalAdministrativeRegion
+<http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://dbpedia.org/ontology/AdministrativeRegion> .
+
+
+###  http://dbpedia.org/ontology/Island
+<http://dbpedia.org/ontology/Island> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/Municipality
+<http://dbpedia.org/ontology/Municipality> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> .
+
+
+###  http://dbpedia.org/ontology/Province
+<http://dbpedia.org/ontology/Province> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> .
+
+
+###  http://schema.org/AdministrativeArea
+<http://schema.org/AdministrativeArea> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://schema.org/Place> .
+
+
+###  http://schema.org/City
+<http://schema.org/City> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://schema.org/AdministrativeArea> .
+
+
+###  http://schema.org/Country
+<http://schema.org/Country> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://schema.org/AdministrativeArea> .
+
+
+###  http://schema.org/Place
+<http://schema.org/Place> rdf:type owl:Class .
+
+
+###  http://schema.org/State
+<http://schema.org/State> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://schema.org/AdministrativeArea> .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#AreaMetropolitana
+:AreaMetropolitana rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+                                     owl:someValuesFrom [ rdf:type owl:Class ;
+                                                          owl:unionOf ( :Diseminado
+                                                                        :EntidadColectiva
+                                                                        :EntidadSingular
+                                                                        :Municipio
+                                                                        :NucleoPoblacion
+                                                                      )
+                                                        ]
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                                     owl:hasValue <http://www.geonames.org/ontology#A>
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                                     owl:hasValue <http://www.geonames.org/ontology#A.ADMD>
+                                   ] ;
+                   <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:string ;
+                   rdfs:comment """Un área o zona metropolitana es una región urbana que engloba una ciudad central que da nombre al área y una serie de ciudades satélites que pueden funcionar como ciudades dormitorio, industriales, comerciales y servicios, todo ello organizado de una manera centralizada. También se la conoce como red urbana. [fuente: Wikipedia]
+Nota: Si existe una definición oficial de lo que es un área metropolitana, sería bueno incluirla, en lugar de la referencia anterior. """@es ;
+                   rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                   rdfs:label "Área metropolitana"@es .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :AreaMetropolitana ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                              owl:unionOf ( :Diseminado
+                                                            :EntidadColectiva
+                                                            :EntidadSingular
+                                                            :Municipio
+                                                            :NucleoPoblacion
+                                                          )
+                                            ]
+                       ] ;
+   rdfs:comment "Esta definición puede ser modificada si se determina que otros tipos de entidades (colectivas, singulares, etc.) pueden participar en un área metropolitana."@es
+ ] .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia
+:Autonomia rdf:type owl:Class ;
+           rdfs:subClassOf <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> ,
+                           <http://schema.org/AdministrativeArea> ,
+                           <http://www.geonames.org/ontology#Feature> ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                             owl:hasValue <http://www.geonames.org/ontology#A>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                             owl:hasValue <http://www.geonames.org/ontology#A.ADMD>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :capital ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Municipio
+                           ] ;
+           <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+           rdfs:comment "Comunidad Autónoma o Ciudad Autónoma"@es ;
+           rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+           rdfs:label "Autonomía"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio
+:Barrio rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                          owl:hasValue <http://www.geonames.org/ontology#P>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                          owl:hasValue <http://www.geonames.org/ontology#P.PPLX>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :municipio ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Municipio
+                        ] ;
+        <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+        rdfs:comment "Un barrio es cada una de las partes en que se dividen los pueblos grandes o sus distritos [fuente: Diccionario de la Real Academia (DRAE) 2011]"@es ;
+        rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+        rdfs:label "Barrio"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Ciudad
+:Ciudad rdf:type owl:Class ;
+        rdfs:subClassOf <http://schema.org/AdministrativeArea> ,
+                        :Municipio ,
+                        <http://www.geonames.org/ontology#Feature> ;
+        <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+        rdfs:comment "Una ciudad es un área urbana en la que predominan fundamentalmente la industria y los servicios [fuente: Wikipedia]"@es ;
+        rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+        rdfs:label "Ciudad"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#CiudadAutonoma
+:CiudadAutonoma rdf:type owl:Class ;
+                rdfs:subClassOf :Autonomia ;
+                owl:disjointWith :ComunidadAutonoma ;
+                <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+                rdfs:comment "Ciudad con competencias superiores a las de un municipio (pueden decretar regulaciones ejecutivas, con competencias reguladoras mayores que las de un municipio) pero inferiores a las de una comunidad autónoma (puesto que no tienen cámaras legislativas propiamente dichas) [fuente: Wikipedia]"@es ;
+                rdfs:isDefinedBy <http://purl.org/derecho/vocabulario> ,
+                                 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                rdfs:label "Ciudad Autónoma"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Comarca
+:Comarca rdf:type owl:Class ;
+         rdfs:subClassOf <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> ,
+                         <http://schema.org/AdministrativeArea> ,
+                         <http://www.geonames.org/ontology#Feature> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Diseminado
+                                                              :EntidadColectiva
+                                                              :EntidadSingular
+                                                              :Municipio
+                                                              :NucleoPoblacion
+                                                            )
+                                              ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                           owl:hasValue <http://www.geonames.org/ontology#A>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                           owl:hasValue <http://www.geonames.org/ontology#A.ADMD>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :capital ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Municipio
+                         ] ;
+         <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+         rdfs:comment "Una comarca es una entidad local territorial según el artículo 3.2.b) de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+         rdfs:isDefinedBy <http://purl.org/derecho/vocabulario> ,
+                          <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+         rdfs:label "Comarca"@es ;
+         rdfs:seeAlso <http://purl.org/derecho/vocabulario#Comarca> .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadAutonoma
+:ComunidadAutonoma rdf:type owl:Class ;
+                   rdfs:subClassOf :Autonomia ;
+                   <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+                   rdfs:comment "Entidad territorial que, dentro del ordenamiento constitucional del Estado español, está dotada de autonomía legislativa y competencias ejecutivas, así como de la facultad de administrarse mediante sus propios representantes [fuente: Diccionario de la lengua española (DRAE) 2011]"@es ;
+                   rdfs:isDefinedBy <http://purl.org/derecho/vocabulario> ,
+                                    <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                   rdfs:label "Comunidad Autónoma"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado
+:Diseminado rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                              owl:hasValue <http://www.geonames.org/ontology#P>
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                              owl:hasValue <http://www.geonames.org/ontology#P.PPLL>
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :entidadSingular ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :EntidadSingular
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :municipio ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Municipio
+                            ] ;
+            <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+            rdfs:comment """Edificación o Vivienda de una Entidad Singular de población que no puede ser incluido en el concepto de Núcleo [fuente: Modelo de Direcciones de la Administración General del Estado v.2]
+Su identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos están recogidos por el INE en el Nomenclátor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do"""@es ;
+            rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/> ,
+                             <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ;
+            rdfs:label "Diseminado"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito
+:Distrito rdf:type owl:Class ;
+          rdfs:subClassOf <http://dbpedia.org/ontology/District> ,
+                          <http://www.geonames.org/ontology#Feature> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                            owl:hasValue <http://www.geonames.org/ontology#P>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                            owl:hasValue <http://www.geonames.org/ontology#P.PPLX>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :municipio ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Municipio
+                          ] ;
+          <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+          rdfs:comment "Un distrito es cada una de las demarcaciones en que se subdivide un territorio o una población para distribuir y ordenar el ejercicio de los derechos civiles y políticos, o de las funciones públicas, o de los servicios administrativos [fuente: Diccionario de la Real Academia (DRAE) 2011]"@es ;
+          rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+          rdfs:label "Distrito"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva
+:EntidadColectiva rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+                                    owl:someValuesFrom [ rdf:type owl:Class ;
+                                                         owl:unionOf ( :Diseminado
+                                                                       :EntidadSingular
+                                                                       :NucleoPoblacion
+                                                                     )
+                                                       ]
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                                    owl:hasValue <http://www.geonames.org/ontology#P>
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                                    owl:hasValue <http://www.geonames.org/ontology#P.PPL>
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :municipio ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :Municipio
+                                  ] ;
+                  <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+                  rdfs:comment """Unidad intermedia entre el Municipio y la Entidad Singular, es la entidad de máximo nivel dentro de la Unidad Poblacional, agrupando a una o varias Entidades Singulares (parroquias, hermandades, anteiglesias...) [fuente: Modelo de Direcciones de la Administración General del Estado v.2]
+Su identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos están recogidos por el INE en el Nomenclátor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do"""@es ;
+                  rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/> ,
+                                   <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ;
+                  rdfs:label "Entidad colectiva"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular
+:EntidadSingular rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( :Diseminado
+                                                                      :NucleoPoblacion
+                                                                    )
+                                                      ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                                   owl:hasValue <http://www.geonames.org/ontology#P>
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                                   owl:hasValue <http://www.geonames.org/ontology#P.PPL>
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :municipio ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :Municipio
+                                 ] ;
+                 <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+                 rdfs:comment """Cualquier área habitable del término municipal, habitada o, excepcionalmente, deshabitada, claramente diferenciada dentro del mismo, y que es conocida por una denominación específica que la identifica sin posibilidad de confusión [fuente: Modelo de Direcciones de la Administración General del Estado v.2]
+Su identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos están recogidos por el INE en el Nomenclátor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do"""@es ;
+                 rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/> ,
+                                  <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ;
+                 rdfs:label "Entidad Singular"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Isla
+:Isla rdf:type owl:Class ;
+      rdfs:subClassOf <http://dbpedia.org/ontology/Island> ,
+                      <http://www.geonames.org/ontology#Feature> ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                        owl:hasValue <http://www.geonames.org/ontology#T>
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                        owl:hasValue <http://www.geonames.org/ontology#T.ISL>
+                      ] ;
+      <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:string ;
+      rdfs:comment """Una isla es una zona de tierra firme, más o menos extensa, rodeada completamente por una masa de agua, de tamaño menor que un continente [fuente: Wikipedia]
+Nota: Si existe una definición oficial de lo que es una isla, desde el punto de vista administrativo, sería bueno incluirla, en lugar de la referencia anterior."""@es ;
+      rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+      rdfs:label "Isla"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#JuntaAdministrativa
+:JuntaAdministrativa rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                                       owl:hasValue <http://www.geonames.org/ontology#P>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                                       owl:hasValue <http://www.geonames.org/ontology#P.PPLX>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :municipio ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :Municipio
+                                     ] ;
+                     <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+                     rdfs:comment """Una junta administrativa rige los intereses peculiares de un pueblo que, en unión con otros, forma un municipio [fuente: Diccionario de la Real Academia (DRAE) 2011]
+En determinados municipios pueden existir subdivisiones de este concepto. Por ejemplo, en Zaragoza se consideran dos tipos de juntas: Juntas Municipales y Juntas Vecinales [fuente: REGLAMENTO DE ÓRGANOS TERRITORIALES Y PARTICIPACIÓN CIUDADANA, http://www.zaragoza.es/ciudad/normativa/detalle_Normativa?id=109]
+"""@es ;
+                     rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                     rdfs:label "Junta administrativa"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Mancomunidad
+:Mancomunidad rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                     owl:unionOf ( :Diseminado
+                                                                   :EntidadColectiva
+                                                                   :EntidadSingular
+                                                                   :Municipio
+                                                                   :NucleoPoblacion
+                                                                 )
+                                                   ]
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                                owl:hasValue <http://www.geonames.org/ontology#A>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                                owl:hasValue <http://www.geonames.org/ontology#A.ADMD>
+                              ] ;
+              <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:string ;
+              rdfs:comment """En sentido jurídico, mancomunidad hace referencia a la asociación libre de municipios, dentro del marco jurídico nacional, que crea una entidad local superior y a la que los municipios asociados delegan parte de las funciones o competencias que la ley les atribuye, al objeto de que se preste un servicio conjuntamente para todos sus miembros.
+Las mancomunidades son formas asociativas de municipios no territoriales y por lo tanto no requieren que los municipios que las componen sean colindantes. Requieren, eso sí, que se fije con claridad el objetivo, que exista un presupuesto propio y unos órganos de gestión igualmente propios y diferenciados de los participantes. [fuente: Wikipedia]
+Nota: Si existe una definición oficial de lo que es una mancomunidad, sería bueno incluirla, en lugar de la referencia anterior. """@es ;
+              rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+              rdfs:label "Mancomunidad"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio
+:Municipio rdf:type owl:Class ;
+           rdfs:subClassOf <http://dbpedia.org/ontology/Municipality> ,
+                           <http://schema.org/AdministrativeArea> ,
+                           <http://www.geonames.org/ontology#Feature> ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                             owl:hasValue <http://www.geonames.org/ontology#P>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                             owl:hasValue <http://www.geonames.org/ontology#P.PPL>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :provincia ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Provincia
+                           ] ;
+           <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+           rdfs:comment """Un Municipio es el ente local definido en el artículo 140 de la Constitución española y la entidad básica de la organización territorial del Estado según el artículo 1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local. Tiene personalidad jurídica y plena capacidad para el cumplimiento de sus fines. La delimitación territorial de Municipio está recogida del REgistro Central de Cartografía del IGN.
+Su nombre, que se especifica con la propiedad dct:title, es el proporcionado por el Registro de Entidades Locales del Ministerio de Política Territorial, en http://www.ine.es/nomen2/index.do"""@es ;
+           rdfs:isDefinedBy <http://purl.org/derecho/vocabulario> ,
+                            <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ,
+                            <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ;
+           rdfs:label "Municipio"@es ;
+           rdfs:seeAlso <http://purl.org/derecho/vocabulario#Municipio> .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion
+:NucleoPoblacion rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                                   owl:hasValue <http://www.geonames.org/ontology#P>
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                                   owl:hasValue <http://www.geonames.org/ontology#P.PPL>
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :entidadSingular ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :EntidadSingular
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :municipio ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :Municipio
+                                 ] ;
+                 <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
+                 rdfs:comment """Conjunto de al menos diez edificaciones, que estén formando calles, plazas y otras vías urbanas. Excepcionalmente el número de edificaciones podrá ser inferior a 10 siempre que la población de derecho supere los 50 habitantes [fuente: Modelo de Direcciones de la Administración General del Estado v.2]
+Su identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos están recogidos por el INE en el Nomenclátor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do"""@es ;
+                 rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/> ,
+                                  <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ;
+                 rdfs:label "Núcleo de Población"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais
+:Pais rdf:type owl:Class ;
+      rdfs:subClassOf <http://dbpedia.org/ontology/Country> ,
+                      <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> ,
+                      <http://schema.org/AdministrativeArea> ,
+                      <http://www.geonames.org/ontology#Feature> ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                        owl:hasValue <http://www.geonames.org/ontology#A>
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                        owl:hasValue <http://www.geonames.org/ontology#A.ADMD>
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :capital ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Municipio
+                      ] ;
+      <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+      rdfs:comment "Un país"@es ;
+      rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+      rdfs:label "País"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#PartidoJudicial
+:PartidoJudicial rdf:type owl:Class ;
+                 rdfs:subClassOf <http://schema.org/AdministrativeArea> ,
+                                 <http://www.geonames.org/ontology#Feature> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( :Diseminado
+                                                                      :EntidadColectiva
+                                                                      :EntidadSingular
+                                                                      :Municipio
+                                                                      :NucleoPoblacion
+                                                                    )
+                                                      ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                                   owl:hasValue <http://www.geonames.org/ontology#A>
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                                   owl:hasValue <http://www.geonames.org/ontology#A.ADMD>
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :provincia ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :Provincia
+                                 ] ;
+                 <http://purl.org/dc/terms/issued> "2014-05-03"^^xsd:string ;
+                 rdfs:comment """Un partido judicial es una unidad territorial para la administración de justicia, integrada por uno o varios municipios limítrofes y pertenecientes a una misma provincia [fuente: Wikipedia]
+Nota: Si existe una definición oficial de lo que es un partido judicial, sería bueno incluirla, en lugar de la referencia anterior. A pesar de tratarse de una unidad territorial relacionada con el área de Justicia, que por tanto podría aparecer bajo el prefijo http://vocab.linkeddata.es/datosabiertos/def/legislacion-justicia/, se ha considerado conveniente incluirla en este vocabulario"""@es ;
+                 rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+                 rdfs:label "Partido judicial"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia
+:Provincia rdf:type owl:Class ;
+           rdfs:subClassOf <http://dbpedia.org/ontology/Province> ,
+                           <http://schema.org/State> ,
+                           <http://www.geonames.org/ontology#Feature> ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                             owl:hasValue <http://www.geonames.org/ontology#A>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                             owl:hasValue <http://www.geonames.org/ontology#A.ADMD>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :capital ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Municipio
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <http://www.opengis.net/ont/geosparql#sfWithin> ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Autonomia
+                           ] ;
+           <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+           rdfs:comment "Cada una de las grandes divisiones de un territorio o Estado, sujeta por lo común a una autoridad administrativa [fuente: Diccionario de la lengua española (DRAE) 2011]"@es ,
+                        """Entidad local con personalidad jurídica propia, determinada por la agrupación de Municipios y división territorial para el cumplimiento de las actividades del Estado. La delimitación territorial de Provincia está recogida en el Registro Central de Cartografía del IGN [fuente: Modelo de Direcciones de la Administración General del Estado v.2]
+Su identificador, que se especifica con la propiedad dct:identifier, es el proporcionado por el INE en http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls
+Su nombre, que se especifica con la propiedad dct:title, es el proporcionado por el Registro de Entidades Locales del Ministerio de Política Territorial, en http://www.ine.es/nomen2/index.do"""@es ;
+           rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ,
+                            <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ,
+                            "http://purl.org/derecho/vocabulario"^^xsd:string ;
+           rdfs:label "Provincia"@es ;
+           rdfs:seeAlso "http://purl.org/derecho/vocabulario#Provincia"^^xsd:string .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#SeccionCensal
+:SeccionCensal rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <http://www.geonames.org/ontology#featureClass> ;
+                                 owl:hasValue <http://www.geonames.org/ontology#P>
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <http://www.geonames.org/ontology#featureCode> ;
+                                 owl:hasValue <http://www.geonames.org/ontology#P.PPLX>
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :municipio ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Municipio
+                               ] ;
+               <http://purl.org/dc/terms/issued> "2014-03-28"^^xsd:string ;
+               rdfs:comment "Una sección censal es un referente geográfico de carácter estadístico, cuya actualización se asocia a los trabajos preliminares de todo Padrón Municipal de Habitantes o Censo de Población, siendo un instrumento eficaz tanto en trabajos censales o padronales, así como para investigaciones por muestreo y en el Censo Electoral. [fuente: http://www.madrid.org/iestadis/fijas/clasificaciones/seccioncensal.htm]"@es ;
+               rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ;
+               rdfs:label "Sección censal"@es .
+
+
+###  http://www.geonames.org/ontology#Feature
+<http://www.geonames.org/ontology#Feature> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://schema.org/Place> .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.geonames.org/ontology#A
+<http://www.geonames.org/ontology#A> rdf:type owl:NamedIndividual ,
+                                              <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://www.geonames.org/ontology#A.ADMD
+<http://www.geonames.org/ontology#A.ADMD> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://www.geonames.org/ontology#P
+<http://www.geonames.org/ontology#P> rdf:type owl:NamedIndividual ,
+                                              <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://www.geonames.org/ontology#P.PPL
+<http://www.geonames.org/ontology#P.PPL> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://www.geonames.org/ontology#P.PPLL
+<http://www.geonames.org/ontology#P.PPLL> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://www.geonames.org/ontology#P.PPLX
+<http://www.geonames.org/ontology#P.PPLX> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://www.geonames.org/ontology#T
+<http://www.geonames.org/ontology#T> rdf:type owl:NamedIndividual ,
+                                              <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://www.geonames.org/ontology#T.ISL
+<http://www.geonames.org/ontology#T.ISL> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+[ rdfs:label "RDF"^^xsd:string
+] .
+
+[ rdfs:label "HTML"^^xsd:string
+ ] .
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+   owl:members ( :Autonomia
+                 :Barrio
+                 :Comarca
+                 :Diseminado
+                 :Distrito
+                 :EntidadColectiva
+                 :EntidadSingular
+                 :JuntaAdministrativa
+                 :Municipio
+                 :NucleoPoblacion
+                 :Pais
+                 :Provincia
+                 :SeccionCensal
+               )
+ ] .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

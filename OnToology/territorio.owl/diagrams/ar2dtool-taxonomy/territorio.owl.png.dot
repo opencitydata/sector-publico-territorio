@@ -1,0 +1,52 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "esadm:Mancomunidad" "esadm:Comarca" "esadm:Isla" "schema:State" "dbpedia-owl:AdministrativeRegion" "dbpedia-owl:Province" "schema:Country" "geonames:Feature" "esadm:EntidadSingular" "esadm:Municipio" "esadm:Pais" "schema:AdministrativeArea" "esadm:CiudadAutonoma" "esadm:Barrio" "dbpedia-owl:Country" "esadm:Diseminado" "esadm:JuntaAdministrativa" "schema:City" "esadm:NucleoPoblacion" "esadm:Provincia" "esadm:EntidadColectiva" "esadm:PartidoJudicial" "dbpedia-owl:GovernmentalAdministrativeRegion" "esadm:ComunidadAutonoma" "schema:Place" "esadm:Ciudad" "dbpedia-owl:District" "esadm:Autonomia" "dbpedia-owl:Island" "dbpedia-owl:Municipality" "esadm:Distrito" "esadm:SeccionCensal" "esadm:AreaMetropolitana" ; /*classes style*/
+	"esadm:Isla" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Isla" -> "dbpedia-owl:Island" [ label = "rdfs:subClassOf" ];
+	"NULL" -> "rdfs:subClassOf" [ label = "owl:annotatedProperty" ];
+	"esadm:Mancomunidad" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"geonames:Feature" -> "schema:Place" [ label = "rdfs:subClassOf" ];
+	"esadm:Distrito" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Distrito" -> "dbpedia-owl:District" [ label = "rdfs:subClassOf" ];
+	"esadm:Municipio" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Municipio" -> "dbpedia-owl:Municipality" [ label = "rdfs:subClassOf" ];
+	"esadm:Municipio" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"esadm:AreaMetropolitana" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Barrio" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Diseminado" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:ComunidadAutonoma" -> "esadm:Autonomia" [ label = "rdfs:subClassOf" ];
+	"esadm:CiudadAutonoma" -> "esadm:Autonomia" [ label = "rdfs:subClassOf" ];
+	"esadm:NucleoPoblacion" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"dbpedia-owl:GovernmentalAdministrativeRegion" -> "dbpedia-owl:AdministrativeRegion" [ label = "rdfs:subClassOf" ];
+	"esadm:Ciudad" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Ciudad" -> "esadm:Municipio" [ label = "rdfs:subClassOf" ];
+	"esadm:Ciudad" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"esadm:Provincia" -> "dbpedia-owl:Province" [ label = "rdfs:subClassOf" ];
+	"esadm:Provincia" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Provincia" -> "schema:State" [ label = "rdfs:subClassOf" ];
+	"esadm:PartidoJudicial" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:PartidoJudicial" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"esadm:Pais" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Pais" -> "dbpedia-owl:Country" [ label = "rdfs:subClassOf" ];
+	"esadm:Pais" -> "dbpedia-owl:GovernmentalAdministrativeRegion" [ label = "rdfs:subClassOf" ];
+	"esadm:Pais" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"schema:State" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"esadm:EntidadColectiva" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Autonomia" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"esadm:Autonomia" -> "dbpedia-owl:GovernmentalAdministrativeRegion" [ label = "rdfs:subClassOf" ];
+	"esadm:Autonomia" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"schema:City" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"dbpedia-owl:District" -> "dbpedia-owl:GovernmentalAdministrativeRegion" [ label = "rdfs:subClassOf" ];
+	"esadm:JuntaAdministrativa" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:EntidadSingular" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"schema:AdministrativeArea" -> "schema:Place" [ label = "rdfs:subClassOf" ];
+	"schema:Country" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"esadm:SeccionCensal" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"dbpedia-owl:Province" -> "dbpedia-owl:GovernmentalAdministrativeRegion" [ label = "rdfs:subClassOf" ];
+	"dbpedia-owl:Municipality" -> "dbpedia-owl:GovernmentalAdministrativeRegion" [ label = "rdfs:subClassOf" ];
+	"esadm:Comarca" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
+	"esadm:Comarca" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"esadm:Comarca" -> "dbpedia-owl:GovernmentalAdministrativeRegion" [ label = "rdfs:subClassOf" ];
+
+}

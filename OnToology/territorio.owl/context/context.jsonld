@@ -1,0 +1,260 @@
+{
+  "@context" : {
+    "Ciudad" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Ciudad"
+    },
+    "NucleoPoblacion" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion"
+    },
+    "JuntaAdministrativa" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#JuntaAdministrativa"
+    },
+    "countryCode" : {
+      "@id" : "http://www.geonames.org/ontology#countryCode"
+    },
+    "entidadSingular" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#entidadSingular",
+      "@type" : "@id"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "PartidoJudicial" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#PartidoJudicial"
+    },
+    "license" : {
+      "@id" : "http://creativecommons.org/ns#license"
+    },
+    "Country" : {
+      "@id" : "http://dbpedia.org/ontology/Country"
+    },
+    "EntidadSingular" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular"
+    },
+    "issued" : {
+      "@id" : "http://purl.org/dc/terms/issued"
+    },
+    "diseminado" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#diseminado",
+      "@type" : "@id"
+    },
+    "autonomia" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#autonomia",
+      "@type" : "@id"
+    },
+    "District" : {
+      "@id" : "http://dbpedia.org/ontology/District"
+    },
+    "distrito" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#distrito",
+      "@type" : "@id"
+    },
+    "SeccionCensal" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#SeccionCensal"
+    },
+    "EntidadColectiva" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva"
+    },
+    "sfWithin" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#sfWithin",
+      "@type" : "@id"
+    },
+    "featureCode" : {
+      "@id" : "http://www.geonames.org/ontology#featureCode",
+      "@type" : "@id"
+    },
+    "Feature" : {
+      "@id" : "http://www.geonames.org/ontology#Feature"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "comarca" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#comarca",
+      "@type" : "@id"
+    },
+    "officialName" : {
+      "@id" : "http://www.geonames.org/ontology#officialName"
+    },
+    "Concept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Provincia" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"
+    },
+    "Autonomia" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia"
+    },
+    "seccionCensal" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#seccionCensal",
+      "@type" : "@id"
+    },
+    "Municipio" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
+    },
+    "pais" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#pais",
+      "@type" : "@id"
+    },
+    "Pais" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais"
+    },
+    "Isla" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Isla"
+    },
+    "Province" : {
+      "@id" : "http://dbpedia.org/ontology/Province"
+    },
+    "partidoJudicial" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#partidoJudicial",
+      "@type" : "@id"
+    },
+    "provincia" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#provincia",
+      "@type" : "@id"
+    },
+    "estado" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado",
+      "@type" : "@id"
+    },
+    "AdministrativeRegion" : {
+      "@id" : "http://dbpedia.org/ontology/AdministrativeRegion"
+    },
+    "featureClass" : {
+      "@id" : "http://www.geonames.org/ontology#featureClass",
+      "@type" : "@id"
+    },
+    "CiudadAutonoma" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#CiudadAutonoma"
+    },
+    "GovernmentalAdministrativeRegion" : {
+      "@id" : "http://dbpedia.org/ontology/GovernmentalAdministrativeRegion"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/elements/1.1/creator"
+    },
+    "name" : {
+      "@id" : "http://www.geonames.org/ontology#name"
+    },
+    "isla" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#isla",
+      "@type" : "@id"
+    },
+    "barrio" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#barrio",
+      "@type" : "@id"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/elements/1.1/rights"
+    },
+    "codigoMunicipioCatastro" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro"
+    },
+    "Distrito" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "ComunidadAutonoma" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadAutonoma"
+    },
+    "Place" : {
+      "@id" : "http://schema.org/Place"
+    },
+    "mancomunidad" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#mancomunidad",
+      "@type" : "@id"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "Island" : {
+      "@id" : "http://dbpedia.org/ontology/Island"
+    },
+    "cabezaDePartidoJudicial" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#cabezaDePartidoJudicial",
+      "@type" : "@id"
+    },
+    "nucleoPoblacion" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#nucleoPoblacion",
+      "@type" : "@id"
+    },
+    "sfContains" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#sfContains",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "areaMetropolitana" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#areaMetropolitana",
+      "@type" : "@id"
+    },
+    "type" : {
+      "@id" : "http://purl.org/dc/terms/type",
+      "@type" : "@id"
+    },
+    "Municipality" : {
+      "@id" : "http://dbpedia.org/ontology/Municipality"
+    },
+    "AreaMetropolitana" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#AreaMetropolitana"
+    },
+    "juntaAdministrativa" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#juntaAdministrativa",
+      "@type" : "@id"
+    },
+    "Diseminado" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado"
+    },
+    "entidadColectiva" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#entidadColectiva",
+      "@type" : "@id"
+    },
+    "capital" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#capital",
+      "@type" : "@id"
+    },
+    "date" : {
+      "@id" : "http://purl.org/dc/elements/1.1/date"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "City" : {
+      "@id" : "http://schema.org/City"
+    },
+    "State" : {
+      "@id" : "http://schema.org/State"
+    },
+    "Barrio" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "hasFormat" : {
+      "@id" : "http://purl.org/dc/terms/hasFormat"
+    },
+    "AdministrativeArea" : {
+      "@id" : "http://schema.org/AdministrativeArea"
+    },
+    "codigoMunicipioINE" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE"
+    },
+    "Comarca" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Comarca"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "Mancomunidad" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Mancomunidad"
+    },
+    "municipio" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio",
+      "@type" : "@id"
+    }
+  }
+}
