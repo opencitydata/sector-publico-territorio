@@ -187,7 +187,7 @@ rdfs:label rdf:type owl:AnnotationProperty .
 http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/historico
 http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente
 http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/provisional"""@es ;
-        rdfs:isDefinedBy <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎> ;
+        rdfs:isDefinedBy <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf> ;
         rdfs:label "estado"@es .
 
 
