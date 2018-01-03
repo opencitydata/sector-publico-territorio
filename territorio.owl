@@ -278,7 +278,7 @@ Y se han añadido a la documentación asociada a las juntas administrativas algu
 http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/historico
 http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente
 http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/provisional</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf"/>
         <rdfs:range rdf:resource="&skos;Concept"/>
     </owl:ObjectProperty>
     
