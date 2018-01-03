@@ -146,7 +146,7 @@
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado> <http://purl.org/dc/terms/issued> "2014-04-15" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado> <http://www.w3.org/2000/01/rdf-schema#comment> "Validez del elemento en su ciclo de vida (versi\u00F3n). Puede ser hist\u00F3rico, vigente o provisional. Se definen en el esquema de conceptos http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado y toman valores:\nhttp://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/historico\nhttp://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente\nhttp://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/provisional"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf\u200E> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado> <http://www.w3.org/2000/01/rdf-schema#label> "estado"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#isla
