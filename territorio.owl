@@ -40,9 +40,26 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:cc="http://creativecommons.org/ns#">
     <owl:Ontology rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio">
-        <dc:date rdf:datatype="&xsd;dateTime">2014-05-03</dc:date>
-        <dcterms:issued rdf:datatype="&xsd;dateTime">2014-05-03</dcterms:issued>
-        <rdfs:comment rdf:datatype="&xsd;dateTime">Este vocabulario se utiliza para la descripción de territorios en España (incluyendo divisiones administrativas y también otros conceptos que se utilizan normalmente pero no tienen entidad jurídica, como por ejemplo barrios). Reutiliza términos de varios vocabularios y modelos que actualmente se utilizan para propósitos similares (y por tanto se irá actualizando de acuerdo con la evolución de estos vocabularios), incluyendo:
+        <dc:date rdf:datatype="&xsd;dateTime">2018-01-08</dc:date>
+        <dcterms:issued rdf:datatype="&xsd;dateTime">2018-01-08</dcterms:issued>
+        <dc:creator>Esther Minguela (LocaliData)</dc:creator>
+        <dc:identifier>http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</dc:identifier>
+        <dc:rights>Creative Commons Attribution 4.0 International (CC BY 4.0)</dc:rights>
+        <dc:creator>David Portolés (Idearium Consultores)</dc:creator>
+        <owl:versionInfo xml:lang="es">En esta ontología se han añadido los siguientes conceptos:
+- ComunidadJurisdiccional
+
+También se han renombrado las siguientes propiedades:
+- codigoMunicipioINE se ha renombrado a codigoINE
+- codigoMunicipioCatastro se ha renombrado a codigoCatastro
+
+Se ha añadido la siguiente propiedad:
+- esCapitalDe
+
+Y se ha incluido como aplicable la propiedad geonames:population para cualquier unidad territorial
+</owl:versionInfo>
+        <dc:creator>Paola Espinoza (Ontology Engineering Group, Universidad Politécnica de Madrid)</dc:creator>
+        <rdfs:comment xml:lang="es">Este vocabulario se utiliza para la descripción de territorios en España (incluyendo divisiones administrativas y también otros conceptos que se utilizan normalmente pero no tienen entidad jurídica, como por ejemplo barrios). Reutiliza términos de varios vocabularios y modelos que actualmente se utilizan para propósitos similares (y por tanto se irá actualizando de acuerdo con la evolución de estos vocabularios), incluyendo:
 - schema.org
 - GeoSPARQL
 - GeoNames
@@ -51,27 +68,6 @@
 - Modelo de direcciones de la Administración General del Estado v.2
 
 Esta ontología sufrirá cambios continuados hasta que se consiga un acuerdo suficiente sobre los términos que se incluyen en ella. También debe incluir términos definidos por comunidades autónomas y municipios (por ejemplo, entidades locales autónomas en Andalucía, juntas vecinales, concejos, pedanías, etc.)</rdfs:comment>
-        <dc:creator>Esther Minguela (LocaliData)</dc:creator>
-        <dc:identifier>http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</dc:identifier>
-        <dc:rights>Creative Commons Attribution 4.0 International (CC BY 4.0)</dc:rights>
-        <dc:creator>David Portolés (Idearium Consultores)</dc:creator>
-        <owl:versionInfo xml:lang="es">En esta ontología se han añadido los siguientes conceptos:
-- PartidoJudicial
-- Isla, y la referencia a su superclase dbpedia-owl:Island
-- Mancomunidad
-- AreaMetropolitana
-
-También se han añadido las siguientes propiedades:
-- cabezaDePartidoJudicial
-- capital
-- isla
-- mancomunidad
-- areaMetropolitana
-
-Asimismo, se han completado omisiones existentes en la versión anterior:
-- Algunos rangos para object properties como diseminado, provincia, etc.
-
-Y se han añadido a la documentación asociada a las juntas administrativas algunos ejemplos, como la existencia de juntas municipales y juntas vecinales </owl:versionInfo>
         <dc:creator>María Jesús Fernández (Ayuntamiento de Zaragoza)</dc:creator>
         <dc:creator>José María Subero (Gobierno de Aragón)</dc:creator>
         <dc:creator>Oscar Corcho (Ontology Engineering Group - Universidad Politécnica de Madrid, LocaliData)</dc:creator>
@@ -79,7 +75,7 @@ Y se han añadido a la documentación asociada a las juntas administrativas algu
         <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html"/>
         <dcterms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.owl"/>
-        <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
+        <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.6"/>
         <vann:preferredNamespaceUri rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"/>
     </owl:Ontology>
     
@@ -269,6 +265,19 @@ Y se han añadido a la documentación asociada a las juntas administrativas algu
     
 
 
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe -->
+
+    <owl:ObjectProperty rdf:about="&esadm;esCapitalDe">
+        <rdfs:label xml:lang="es">es capital de</rdfs:label>
+        <dcterms:issued rdf:datatype="&xsd;dateTime">2018-01-08</dcterms:issued>
+        <rdfs:comment xml:lang="es">Especifica una unidad territorial de la que esta unidad territorial es capital</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <owl:inverseOf rdf:resource="&esadm;capital"/>
+        <rdfs:subPropertyOf rdf:resource="&geosparql;sfWithin"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado -->
 
     <owl:ObjectProperty rdf:about="&esadm;estado">
@@ -449,12 +458,12 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro -->
 
-    <owl:DatatypeProperty rdf:about="&esadm;codigoMunicipioCatastro">
-        <rdfs:label xml:lang="es">código del Municipio según Catastro</rdfs:label>
-        <dcterms:issued>2014-04-15</dcterms:issued>
-        <rdfs:comment xml:lang="es">Código que asigna Catastro al Municipio, en caso de existir la relación.</rdfs:comment>
+    <owl:DatatypeProperty rdf:about="&esadm;codigoCatastro">
+        <rdfs:label xml:lang="es">código de la entidad territorial según Catastro</rdfs:label>
+        <dcterms:issued>2018-01-08</dcterms:issued>
+        <rdfs:comment xml:lang="es">Código que asigna Catastro a la entidad territorial, en caso de existir la relación.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&dcterms;identifier"/>
         <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎"/>
@@ -462,12 +471,12 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE -->
 
-    <owl:DatatypeProperty rdf:about="&esadm;codigoMunicipioINE">
-        <rdfs:label xml:lang="es">código del Municipio según el INE</rdfs:label>
-        <dcterms:issued>2014-04-15</dcterms:issued>
-        <rdfs:comment xml:lang="es">Código del Municipio de tres dígitos del INE, definido en  http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls</rdfs:comment>
+    <owl:DatatypeProperty rdf:about="&esadm;codigoINE">
+        <rdfs:label xml:lang="es">código de la entidad territorial según el INE</rdfs:label>
+        <dcterms:issued>2018-01-08</dcterms:issued>
+        <rdfs:comment xml:lang="es">Código de la entidad territorial del INE. Por ejemplo, para municipios este código es de tres dígitos y está definido en http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&dcterms;identifier"/>
         <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎"/>
@@ -500,6 +509,16 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
     <owl:DatatypeProperty rdf:about="&geonames;officialName">
         <rdfs:label xml:lang="es">nombre oficial</rdfs:label>
         <rdfs:comment xml:lang="es">Un nombre en el idioma oficial local</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.geonames.org/ontology"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#population -->
+
+    <owl:DatatypeProperty rdf:about="&geonames;population">
+        <rdfs:label xml:lang="es">población</rdfs:label>
+        <rdfs:comment xml:lang="es">Número total de habitantes del núcleo según el nomenclátor del INE para el año que aparezca en los metadatos </rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.geonames.org/ontology"/>
     </owl:DatatypeProperty>
     
@@ -710,15 +729,15 @@ Nota: Si existe una definición oficial de lo que es un área metropolitana, ser
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureCode"/>
-                <owl:hasValue rdf:resource="&geonames;P.PPLX"/>
+                <owl:onProperty rdf:resource="&esadm;municipio"/>
+                <owl:onClass rdf:resource="&esadm;Municipio"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;municipio"/>
-                <owl:onClass rdf:resource="&esadm;Municipio"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&geonames;featureCode"/>
+                <owl:hasValue rdf:resource="&geonames;P.PPLX"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -771,19 +790,6 @@ Nota: Si existe una definición oficial de lo que es un área metropolitana, ser
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;capital"/>
-                <owl:onClass rdf:resource="&esadm;Municipio"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureCode"/>
-                <owl:hasValue rdf:resource="&geonames;A.ADMD"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&geosparql;sfContains"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -800,8 +806,21 @@ Nota: Si existe una definición oficial de lo que es un área metropolitana, ser
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&esadm;capital"/>
+                <owl:onClass rdf:resource="&esadm;Municipio"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&geonames;featureClass"/>
                 <owl:hasValue rdf:resource="&geonames;A"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&geonames;featureCode"/>
+                <owl:hasValue rdf:resource="&geonames;A.ADMD"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dcterms:issued>2014-03-28</dcterms:issued>
@@ -826,6 +845,19 @@ Nota: Si existe una definición oficial de lo que es un área metropolitana, ser
     
 
 
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional -->
+
+    <owl:Class rdf:about="&esadm;ComunidadJurisdiccional">
+        <rdfs:label xml:lang="es">Comunidad jurisdiccional</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&schema;AdministrativeArea"/>
+        <dcterms:issued rdf:datatype="&xsd;dateTime">2018-01-08</dcterms:issued>
+        <rdfs:comment>Las Comunidades Jurisdiccionales se definen como aquellos territorios con superficie propia cuya gestión o uso es realizado por varios municipios, provincias o es directamente estatal.
+Su existencia es el resultado de los trabajos de campo originales realizados para la delimitación de los municipios y su representación en la primera edición del Mapa Topográfico Nacional a escala 1:50.000 (fuente: Instituto Geográfico Nacional)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+    </owl:Class>
+    
+
+
     <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado -->
 
     <owl:Class rdf:about="&esadm;Diseminado">
@@ -833,8 +865,8 @@ Nota: Si existe una definición oficial de lo que es un área metropolitana, ser
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureClass"/>
-                <owl:hasValue rdf:resource="&geonames;P"/>
+                <owl:onProperty rdf:resource="&geonames;featureCode"/>
+                <owl:hasValue rdf:resource="&geonames;P.PPLL"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -853,8 +885,8 @@ Nota: Si existe una definición oficial de lo que es un área metropolitana, ser
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureCode"/>
-                <owl:hasValue rdf:resource="&geonames;P.PPLL"/>
+                <owl:onProperty rdf:resource="&geonames;featureClass"/>
+                <owl:hasValue rdf:resource="&geonames;P"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dcterms:issued>2014-04-15</dcterms:issued>
@@ -874,15 +906,15 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureClass"/>
-                <owl:hasValue rdf:resource="&geonames;P"/>
+                <owl:onProperty rdf:resource="&esadm;municipio"/>
+                <owl:onClass rdf:resource="&esadm;Municipio"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;municipio"/>
-                <owl:onClass rdf:resource="&esadm;Municipio"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&geonames;featureClass"/>
+                <owl:hasValue rdf:resource="&geonames;P"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -905,12 +937,6 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureCode"/>
-                <owl:hasValue rdf:resource="&geonames;P.PPL"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&geosparql;sfContains"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -921,6 +947,12 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&geonames;featureCode"/>
+                <owl:hasValue rdf:resource="&geonames;P.PPL"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -952,15 +984,15 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;municipio"/>
-                <owl:onClass rdf:resource="&esadm;Municipio"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&geonames;featureClass"/>
+                <owl:hasValue rdf:resource="&geonames;P"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureClass"/>
-                <owl:hasValue rdf:resource="&geonames;P"/>
+                <owl:onProperty rdf:resource="&esadm;municipio"/>
+                <owl:onClass rdf:resource="&esadm;Municipio"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -999,14 +1031,14 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureCode"/>
-                <owl:hasValue rdf:resource="&geonames;T.ISL"/>
+                <owl:onProperty rdf:resource="&geonames;featureClass"/>
+                <owl:hasValue rdf:resource="&geonames;T"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureClass"/>
-                <owl:hasValue rdf:resource="&geonames;T"/>
+                <owl:onProperty rdf:resource="&geonames;featureCode"/>
+                <owl:hasValue rdf:resource="&geonames;T.ISL"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dcterms:issued>2014-05-03</dcterms:issued>
@@ -1101,15 +1133,15 @@ Nota: Si existe una definición oficial de lo que es una mancomunidad, sería bu
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureClass"/>
-                <owl:hasValue rdf:resource="&geonames;P"/>
+                <owl:onProperty rdf:resource="&esadm;provincia"/>
+                <owl:onClass rdf:resource="&esadm;Provincia"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;provincia"/>
-                <owl:onClass rdf:resource="&esadm;Provincia"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&geonames;featureClass"/>
+                <owl:hasValue rdf:resource="&geonames;P"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1136,14 +1168,15 @@ Su nombre, que se especifica con la propiedad dct:title, es el proporcionado por
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureCode"/>
-                <owl:hasValue rdf:resource="&geonames;P.PPL"/>
+                <owl:onProperty rdf:resource="&esadm;municipio"/>
+                <owl:onClass rdf:resource="&esadm;Municipio"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;municipio"/>
-                <owl:onClass rdf:resource="&esadm;Municipio"/>
+                <owl:onProperty rdf:resource="&esadm;entidadSingular"/>
+                <owl:onClass rdf:resource="&esadm;EntidadSingular"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1155,9 +1188,8 @@ Su nombre, que se especifica con la propiedad dct:title, es el proporcionado por
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;entidadSingular"/>
-                <owl:onClass rdf:resource="&esadm;EntidadSingular"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&geonames;featureCode"/>
+                <owl:hasValue rdf:resource="&geonames;P.PPL"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dcterms:issued>2014-04-15</dcterms:issued>
@@ -1185,15 +1217,15 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;capital"/>
-                <owl:onClass rdf:resource="&esadm;Municipio"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&geonames;featureCode"/>
+                <owl:hasValue rdf:resource="&geonames;A.ADMD"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureCode"/>
-                <owl:hasValue rdf:resource="&geonames;A.ADMD"/>
+                <owl:onProperty rdf:resource="&esadm;capital"/>
+                <owl:onClass rdf:resource="&esadm;Municipio"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dcterms:issued>2014-03-28</dcterms:issued>
@@ -1209,6 +1241,19 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
         <rdfs:label xml:lang="es">Partido judicial</rdfs:label>
         <rdfs:subClassOf rdf:resource="&schema;AdministrativeArea"/>
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&esadm;provincia"/>
+                <owl:onClass rdf:resource="&esadm;Provincia"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&geonames;featureCode"/>
+                <owl:hasValue rdf:resource="&geonames;A.ADMD"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&geosparql;sfContains"/>
@@ -1231,19 +1276,6 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
                 <owl:hasValue rdf:resource="&geonames;A"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureCode"/>
-                <owl:hasValue rdf:resource="&geonames;A.ADMD"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;provincia"/>
-                <owl:onClass rdf:resource="&esadm;Provincia"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <dcterms:issued>2014-05-03</dcterms:issued>
         <rdfs:comment xml:lang="es">Un partido judicial es una unidad territorial para la administración de justicia, integrada por uno o varios municipios limítrofes y pertenecientes a una misma provincia [fuente: Wikipedia]
 Nota: Si existe una definición oficial de lo que es un partido judicial, sería bueno incluirla, en lugar de la referencia anterior. A pesar de tratarse de una unidad territorial relacionada con el área de Justicia, que por tanto podría aparecer bajo el prefijo http://vocab.linkeddata.es/datosabiertos/def/legislacion-justicia/, se ha considerado conveniente incluirla en este vocabulario</rdfs:comment>
@@ -1261,15 +1293,15 @@ Nota: Si existe una definición oficial de lo que es un partido judicial, sería
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureCode"/>
-                <owl:hasValue rdf:resource="&geonames;A.ADMD"/>
+                <owl:onProperty rdf:resource="&geosparql;sfWithin"/>
+                <owl:onClass rdf:resource="&esadm;Autonomia"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geosparql;sfWithin"/>
-                <owl:onClass rdf:resource="&esadm;Autonomia"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&geonames;featureClass"/>
+                <owl:hasValue rdf:resource="&geonames;A"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1281,8 +1313,8 @@ Nota: Si existe una definición oficial de lo que es un partido judicial, sería
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureClass"/>
-                <owl:hasValue rdf:resource="&geonames;A"/>
+                <owl:onProperty rdf:resource="&geonames;featureCode"/>
+                <owl:hasValue rdf:resource="&geonames;A.ADMD"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso>http://purl.org/derecho/vocabulario#Provincia</rdfs:seeAlso>
@@ -1305,15 +1337,15 @@ Su nombre, que se especifica con la propiedad dct:title, es el proporcionado por
         <rdfs:subClassOf rdf:resource="&geonames;Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&geonames;featureClass"/>
-                <owl:hasValue rdf:resource="&geonames;P"/>
+                <owl:onProperty rdf:resource="&esadm;municipio"/>
+                <owl:onClass rdf:resource="&esadm;Municipio"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&esadm;municipio"/>
-                <owl:onClass rdf:resource="&esadm;Municipio"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&geonames;featureClass"/>
+                <owl:hasValue rdf:resource="&geonames;P"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1416,10 +1448,10 @@ Su nombre, que se especifica con la propiedad dct:title, es el proporcionado por
         <rdf:type rdf:resource="&skos;Concept"/>
     </owl:NamedIndividual>
     <rdf:Description>
-        <rdfs:label>HTML</rdfs:label>
+        <rdfs:label>RDF</rdfs:label>
     </rdf:Description>
     <rdf:Description>
-        <rdfs:label>RDF</rdfs:label>
+        <rdfs:label>HTML</rdfs:label>
     </rdf:Description>
     
 
