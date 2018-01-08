@@ -43,6 +43,10 @@ This section provides details for each class and property defined by Vocabulario
             title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadAutonoma">Comunidad Autónoma</a>
       </li>
       <li>
+         <a href="#ComunidadJurisdiccional"
+            title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional">Comunidad jurisdiccional</a>
+      </li>
+      <li>
          <a href="#http://dbpedia.org/ontology/Country" title="http://dbpedia.org/ontology/Country">
             <span>country</span>
          </a>
@@ -161,6 +165,8 @@ This section provides details for each class and property defined by Vocabulario
                title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Ciudad">Ciudad</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Comarca"
                title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Comarca">Comarca</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ComunidadJurisdiccional"
+               title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional">Comunidad jurisdiccional</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Municipio"
                title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio">Municipio</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PartidoJudicial"
@@ -594,6 +600,31 @@ This section provides details for each class and property defined by Vocabulario
          <dd>
             <a href="#CiudadAutonoma"
                title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#CiudadAutonoma">Ciudad Autónoma</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ComunidadJurisdiccional">
+      <h3>Comunidad jurisdiccional<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional</p>
+      <div class="comment">
+         <span class="markdown">Las Comunidades Jurisdiccionales se definen como aquellos territorios con superficie propia cuya gestión o uso es realizado por varios municipios, provincias o es directamente estatal.
+Su existencia es el resultado de los trabajos de campo originales realizados para la delimitación de los municipios y su representación en la primera edición del Mapa Topográfico Nacional a escala 1:50.000 (fuente: Instituto Geográfico Nacional)</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio">http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://schema.org/AdministrativeArea" title="http://schema.org/AdministrativeArea">administrative area</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1980,6 +2011,10 @@ Nota: Si existe una definición oficial de lo que es un área metropolitana, ser
             title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#capital">capital</a>
       </li>
       <li>
+         <a href="#esCapitalDe"
+            title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe">es capital de</a>
+      </li>
+      <li>
          <a href="#estado"
             title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado">estado</a>
       </li>
@@ -2132,6 +2167,44 @@ Nota: Si existe una definición oficial de lo que es un área metropolitana, ser
                <a href="#Municipio"
                   title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio">Municipio</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#esCapitalDe"
+                  title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe">es capital de</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="esCapitalDe">
+      <h3>es capital de<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe</p>
+      <div class="comment">
+         <span class="markdown">Especifica una unidad territorial de la que esta unidad territorial es capital</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio">http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.opengis.net/ont/geosparql#sfWithin">sf within</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#capital"
+                  title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#capital">capital</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -2735,15 +2808,15 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
    <h3 id="dataproperties" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
+         <a href="#codigoCatastro"
+            title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro">código de la entidad territorial según Catastro</a>
+      </li>
+      <li>
+         <a href="#codigoINE"
+            title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE">código de la entidad territorial según el INE</a>
+      </li>
+      <li>
          <a href="#http://www.geonames.org/ontology#countryCode" title="http://www.geonames.org/ontology#countryCode">código de país ISO</a>
-      </li>
-      <li>
-         <a href="#codigoMunicipioCatastro"
-            title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro">código del Municipio según Catastro</a>
-      </li>
-      <li>
-         <a href="#codigoMunicipioINE"
-            title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE">código del Municipio según el INE</a>
       </li>
       <li>
          <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identificador</a>
@@ -2754,7 +2827,68 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
       <li>
          <a href="#http://www.geonames.org/ontology#officialName" title="http://www.geonames.org/ontology#officialName">nombre oficial</a>
       </li>
+      <li>
+         <a href="#http://www.geonames.org/ontology#population" title="http://www.geonames.org/ontology#population">población</a>
+      </li>
    </ul>
+   <div class="entity" id="codigoCatastro">
+      <h3>código de la entidad territorial según Catastro<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro</p>
+      <div class="comment">
+         <span class="markdown">Código que asigna Catastro a la entidad territorial, en caso de existir la relación.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio">http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</a>
+         </dd>
+         <dd>
+            <a href="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf%E2%80%8E">http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identificador</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="codigoINE">
+      <h3>código de la entidad territorial según el INE<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE</p>
+      <div class="comment">
+         <span class="markdown">Código de la entidad territorial del INE. Por ejemplo, para municipios este código es de tres dígitos y está definido en http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio">http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</a>
+         </dd>
+         <dd>
+            <a href="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf%E2%80%8E">http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identificador</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="http://www.geonames.org/ontology#countryCode">
       <h3>código de país ISO<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -2771,64 +2905,6 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
             <a href="http://www.geonames.org/ontology">http://www.geonames.org/ontology</a>
          </dd>
       </dl>
-   </div>
-   <div class="entity" id="codigoMunicipioCatastro">
-      <h3>código del Municipio según Catastro<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro</p>
-      <div class="comment">
-         <span class="markdown">Código que asigna Catastro al Municipio, en caso de existir la relación.</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio">http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</a>
-         </dd>
-         <dd>
-            <a href="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf%E2%80%8E">http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identificador</a>
-               <sup class="type-dp" title="data property">dp</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="codigoMunicipioINE">
-      <h3>código del Municipio según el INE<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE</p>
-      <div class="comment">
-         <span class="markdown">Código del Municipio de tres dígitos del INE, definido en  http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio">http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</a>
-         </dd>
-         <dd>
-            <a href="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf%E2%80%8E">http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identificador</a>
-               <sup class="type-dp" title="data property">dp</sup>
-            </dd>
-         </dl>
-      </div>
    </div>
    <div class="entity" id="http://purl.org/dc/terms/identifier">
       <h3>identificador<sup class="type-dp" title="data property">dp</sup>
@@ -2850,10 +2926,10 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
          <dl>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#codigoMunicipioCatastro"
-                  title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro">código del Municipio según Catastro</a>
-               <sup class="type-dp" title="data property">dp</sup>, <a href="#codigoMunicipioINE"
-                  title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE">código del Municipio según el INE</a>
+               <a href="#codigoCatastro"
+                  title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro">código de la entidad territorial según Catastro</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#codigoINE"
+                  title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE">código de la entidad territorial según el INE</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
          </dl>
@@ -2885,6 +2961,23 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
          <strong>IRI:</strong> http://www.geonames.org/ontology#officialName</p>
       <div class="comment">
          <span class="markdown">Un nombre en el idioma oficial local</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.geonames.org/ontology">http://www.geonames.org/ontology</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.geonames.org/ontology#population">
+      <h3>población<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.geonames.org/ontology#population</p>
+      <div class="comment">
+         <span class="markdown">Número total de habitantes del núcleo según el nomenclátor del INE para el año que aparezca en los metadatos </span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
