@@ -1,7 +1,7 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "esadm:Mancomunidad" "esadm:Comarca" "esadm:Isla" "schema:State" "dbpedia-owl:AdministrativeRegion" "dbpedia-owl:Province" "schema:Country" "geonames:Feature" "esadm:EntidadSingular" "esadm:Municipio" "esadm:Pais" "schema:AdministrativeArea" "esadm:CiudadAutonoma" "esadm:Barrio" "dbpedia-owl:Country" "esadm:Diseminado" "esadm:JuntaAdministrativa" "schema:City" "esadm:NucleoPoblacion" "esadm:Provincia" "esadm:EntidadColectiva" "esadm:PartidoJudicial" "dbpedia-owl:GovernmentalAdministrativeRegion" "esadm:ComunidadAutonoma" "schema:Place" "esadm:Ciudad" "dbpedia-owl:District" "esadm:Autonomia" "dbpedia-owl:Island" "dbpedia-owl:Municipality" "esadm:Distrito" "esadm:SeccionCensal" "esadm:AreaMetropolitana" ; /*classes style*/
+node [shape = rectangle, color="black"]; "esadm:Mancomunidad" "esadm:Comarca" "esadm:Isla" "schema:State" "dbpedia-owl:AdministrativeRegion" "dbpedia-owl:Province" "schema:Country" "geonames:Feature" "esadm:EntidadSingular" "esadm:Municipio" "esadm:Pais" "esadm:ComunidadJurisdiccional" "schema:AdministrativeArea" "esadm:CiudadAutonoma" "esadm:Barrio" "dbpedia-owl:Country" "esadm:Diseminado" "esadm:JuntaAdministrativa" "schema:City" "esadm:NucleoPoblacion" "esadm:Provincia" "esadm:EntidadColectiva" "esadm:PartidoJudicial" "dbpedia-owl:GovernmentalAdministrativeRegion" "esadm:ComunidadAutonoma" "schema:Place" "esadm:Ciudad" "dbpedia-owl:District" "esadm:Autonomia" "dbpedia-owl:Island" "dbpedia-owl:Municipality" "esadm:Distrito" "esadm:SeccionCensal" "esadm:AreaMetropolitana" ; /*classes style*/
 	"esadm:Isla" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
 	"esadm:Isla" -> "dbpedia-owl:Island" [ label = "rdfs:subClassOf" ];
 	"NULL" -> "rdfs:subClassOf" [ label = "owl:annotatedProperty" ];
@@ -31,6 +31,7 @@ node [shape = rectangle, color="black"]; "esadm:Mancomunidad" "esadm:Comarca" "e
 	"esadm:Pais" -> "dbpedia-owl:Country" [ label = "rdfs:subClassOf" ];
 	"esadm:Pais" -> "dbpedia-owl:GovernmentalAdministrativeRegion" [ label = "rdfs:subClassOf" ];
 	"esadm:Pais" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
+	"esadm:ComunidadJurisdiccional" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
 	"schema:State" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];
 	"esadm:EntidadColectiva" -> "geonames:Feature" [ label = "rdfs:subClassOf" ];
 	"esadm:Autonomia" -> "schema:AdministrativeArea" [ label = "rdfs:subClassOf" ];

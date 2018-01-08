@@ -1,21 +1,22 @@
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/2002/07/owl#versionIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/2002/07/owl#versionIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.6> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/creator> "David Portol\u00E9s (Idearium Consultores)" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/creator> "Esther Minguela (LocaliData)" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/creator> "Jos\u00E9 Mar\u00EDa Subero (Gobierno de Arag\u00F3n)" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/creator> "Mar\u00EDa Jes\u00FAs Fern\u00E1ndez (Ayuntamiento de Zaragoza)" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/creator> "Oscar Corcho (Ontology Engineering Group - Universidad Polit\u00E9cnica de Madrid, LocaliData)" .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/date> "2014-05-03"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/creator> "Paola Espinoza (Ontology Engineering Group, Universidad Polit\u00E9cnica de Madrid)" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/date> "2018-01-08"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/identifier> "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/rights> "Creative Commons Attribution 4.0 International (CC BY 4.0)" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/title> "Vocabulario para la representaci\u00F3n de datos de territorio (incluyendo divisiones administrativas) en Espa\u00F1a"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/terms/hasFormat> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/terms/hasFormat> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.owl> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/terms/issued> "2014-05-03"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/terms/issued> "2018-01-08"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/vocab/vann/preferredNamespaceUri> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/2000/01/rdf-schema#comment> "Este vocabulario se utiliza para la descripci\u00F3n de territorios en Espa\u00F1a (incluyendo divisiones administrativas y tambi\u00E9n otros conceptos que se utilizan normalmente pero no tienen entidad jur\u00EDdica, como por ejemplo barrios). Reutiliza t\u00E9rminos de varios vocabularios y modelos que actualmente se utilizan para prop\u00F3sitos similares (y por tanto se ir\u00E1 actualizando de acuerdo con la evoluci\u00F3n de estos vocabularios), incluyendo:\n- schema.org\n- GeoSPARQL\n- GeoNames\n- DBpedia\n- Ontolog\u00EDa Jur\u00EDdica Libre\n- Modelo de direcciones de la Administraci\u00F3n General del Estado v.2\n\nEsta ontolog\u00EDa sufrir\u00E1 cambios continuados hasta que se consiga un acuerdo suficiente sobre los t\u00E9rminos que se incluyen en ella. Tambi\u00E9n debe incluir t\u00E9rminos definidos por comunidades aut\u00F3nomas y municipios (por ejemplo, entidades locales aut\u00F3nomas en Andaluc\u00EDa, juntas vecinales, concejos, pedan\u00EDas, etc.)"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/2002/07/owl#versionInfo> "En esta ontolog\u00EDa se han a\u00F1adido los siguientes conceptos:\n- PartidoJudicial\n- Isla, y la referencia a su superclase dbpedia-owl:Island\n- Mancomunidad\n- AreaMetropolitana\n\nTambi\u00E9n se han a\u00F1adido las siguientes propiedades:\n- cabezaDePartidoJudicial\n- capital\n- isla\n- mancomunidad\n- areaMetropolitana\n\nAsimismo, se han completado omisiones existentes en la versi\u00F3n anterior:\n- Algunos rangos para object properties como diseminado, provincia, etc.\n\nY se han a\u00F1adido a la documentaci\u00F3n asociada a las juntas administrativas algunos ejemplos, como la existencia de juntas municipales y juntas vecinales "@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/2000/01/rdf-schema#comment> "Este vocabulario se utiliza para la descripci\u00F3n de territorios en Espa\u00F1a (incluyendo divisiones administrativas y tambi\u00E9n otros conceptos que se utilizan normalmente pero no tienen entidad jur\u00EDdica, como por ejemplo barrios). Reutiliza t\u00E9rminos de varios vocabularios y modelos que actualmente se utilizan para prop\u00F3sitos similares (y por tanto se ir\u00E1 actualizando de acuerdo con la evoluci\u00F3n de estos vocabularios), incluyendo:\n- schema.org\n- GeoSPARQL\n- GeoNames\n- DBpedia\n- Ontolog\u00EDa Jur\u00EDdica Libre\n- Modelo de direcciones de la Administraci\u00F3n General del Estado v.2\n\nEsta ontolog\u00EDa sufrir\u00E1 cambios continuados hasta que se consiga un acuerdo suficiente sobre los t\u00E9rminos que se incluyen en ella. Tambi\u00E9n debe incluir t\u00E9rminos definidos por comunidades aut\u00F3nomas y municipios (por ejemplo, entidades locales aut\u00F3nomas en Andaluc\u00EDa, juntas vecinales, concejos, pedan\u00EDas, etc.)"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/2002/07/owl#versionInfo> "En esta ontolog\u00EDa se han a\u00F1adido los siguientes conceptos:\n- ComunidadJurisdiccional\n\nTambi\u00E9n se han renombrado las siguientes propiedades:\n- codigoMunicipioINE se ha renombrado a codigoINE\n- codigoMunicipioCatastro se ha renombrado a codigoCatastro\n\nSe ha a\u00F1adido la siguiente propiedad:\n- esCapitalDe\n\nY se ha incluido como aplicable la propiedad geonames:population para cualquier unidad territorial\n"@es .
 # 
 # 
 # #################################################################
@@ -141,6 +142,15 @@
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#entidadSingular> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#entidadSingular> <http://www.w3.org/2000/01/rdf-schema#label> "pertenece a entidad singular"@es .
 # 
+# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#sfWithin> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe> <http://www.w3.org/2002/07/owl#inverseOf> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#capital> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe> <http://purl.org/dc/terms/issued> "2018-01-08"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe> <http://www.w3.org/2000/01/rdf-schema#comment> "Especifica una unidad territorial de la que esta unidad territorial es capital"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe> <http://www.w3.org/2000/01/rdf-schema#label> "es capital de"@es .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -258,23 +268,23 @@
 <http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
 <http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identificador"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/identifier> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro> <http://purl.org/dc/terms/issued> "2014-04-15" .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro> <http://www.w3.org/2000/01/rdf-schema#comment> "C\u00F3digo que asigna Catastro al Municipio, en caso de existir la relaci\u00F3n."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf\u200E> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro> <http://www.w3.org/2000/01/rdf-schema#label> "c\u00F3digo del Municipio seg\u00FAn Catastro"@es .
+# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/identifier> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro> <http://purl.org/dc/terms/issued> "2018-01-08" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro> <http://www.w3.org/2000/01/rdf-schema#comment> "C\u00F3digo que asigna Catastro a la entidad territorial, en caso de existir la relaci\u00F3n."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf\u200E> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro> <http://www.w3.org/2000/01/rdf-schema#label> "c\u00F3digo de la entidad territorial seg\u00FAn Catastro"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/identifier> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE> <http://purl.org/dc/terms/issued> "2014-04-15" .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE> <http://www.w3.org/2000/01/rdf-schema#comment> "C\u00F3digo del Municipio de tres d\u00EDgitos del INE, definido en  http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf\u200E> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE> <http://www.w3.org/2000/01/rdf-schema#label> "c\u00F3digo del Municipio seg\u00FAn el INE"@es .
+# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/identifier> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE> <http://purl.org/dc/terms/issued> "2018-01-08" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE> <http://www.w3.org/2000/01/rdf-schema#comment> "C\u00F3digo de la entidad territorial del INE. Por ejemplo, para municipios este c\u00F3digo es de tres d\u00EDgitos y est\u00E1 definido en http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf\u200E> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE> <http://www.w3.org/2000/01/rdf-schema#label> "c\u00F3digo de la entidad territorial seg\u00FAn el INE"@es .
 # 
 # http://www.geonames.org/ontology#countryCode
 <http://www.geonames.org/ontology#countryCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -293,6 +303,12 @@
 <http://www.geonames.org/ontology#officialName> <http://www.w3.org/2000/01/rdf-schema#comment> "Un nombre en el idioma oficial local"@es .
 <http://www.geonames.org/ontology#officialName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.geonames.org/ontology> .
 <http://www.geonames.org/ontology#officialName> <http://www.w3.org/2000/01/rdf-schema#label> "nombre oficial"@es .
+# 
+# http://www.geonames.org/ontology#population
+<http://www.geonames.org/ontology#population> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.geonames.org/ontology#population> <http://www.w3.org/2000/01/rdf-schema#comment> "N\u00FAmero total de habitantes del n\u00FAcleo seg\u00FAn el nomencl\u00E1tor del INE para el a\u00F1o que aparezca en los metadatos "@es .
+<http://www.geonames.org/ontology#population> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.geonames.org/ontology> .
+<http://www.geonames.org/ontology#population> <http://www.w3.org/2000/01/rdf-schema#label> "poblaci\u00F3n"@es .
 # 
 # 
 # 
@@ -509,6 +525,14 @@ _:genid26 <http://www.w3.org/2002/07/owl#onClass> <http://vocab.linkeddata.es/da
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadAutonoma> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/derecho/vocabulario> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadAutonoma> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadAutonoma> <http://www.w3.org/2000/01/rdf-schema#label> "Comunidad Aut\u00F3noma"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/AdministrativeArea> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional> <http://purl.org/dc/terms/issued> "2018-01-08"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional> <http://www.w3.org/2000/01/rdf-schema#comment> "Las Comunidades Jurisdiccionales se definen como aquellos territorios con superficie propia cuya gesti\u00F3n o uso es realizado por varios municipios, provincias o es directamente estatal.\nSu existencia es el resultado de los trabajos de campo originales realizados para la delimitaci\u00F3n de los municipios y su representaci\u00F3n en la primera edici\u00F3n del Mapa Topogr\u00E1fico Nacional a escala 1:50.000 (fuente: Instituto Geogr\u00E1fico Nacional)" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional> <http://www.w3.org/2000/01/rdf-schema#label> "Comunidad jurisdiccional"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -926,8 +950,8 @@ _:genid89 <http://www.w3.org/2002/07/owl#onClass> <http://vocab.linkeddata.es/da
 <http://www.geonames.org/ontology#T.ISL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.geonames.org/ontology#T.ISL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 # 
-_:genid90 <http://www.w3.org/2000/01/rdf-schema#label> "RDF" .
-_:genid91 <http://www.w3.org/2000/01/rdf-schema#label> "HTML" .
+_:genid90 <http://www.w3.org/2000/01/rdf-schema#label> "HTML" .
+_:genid91 <http://www.w3.org/2000/01/rdf-schema#label> "RDF" .
 # 
 # 
 # #################################################################

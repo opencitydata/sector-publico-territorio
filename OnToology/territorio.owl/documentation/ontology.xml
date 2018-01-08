@@ -11,22 +11,23 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio">
-        <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
+        <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.6"/>
         <ns:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Portolés (Idearium Consultores)</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Esther Minguela (LocaliData)</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">José María Subero (Gobierno de Aragón)</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">María Jesús Fernández (Ayuntamiento de Zaragoza)</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oscar Corcho (Ontology Engineering Group - Universidad Politécnica de Madrid, LocaliData)</dc:creator>
-        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-03</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paola Espinoza (Ontology Engineering Group, Universidad Politécnica de Madrid)</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-08</dc:date>
         <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</dc:identifier>
         <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Creative Commons Attribution 4.0 International (CC BY 4.0)</dc:rights>
         <dc:title xml:lang="es">Vocabulario para la representación de datos de territorio (incluyendo divisiones administrativas) en España</dc:title>
         <terms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html"/>
         <terms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.owl"/>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-03</terms:issued>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-08</terms:issued>
         <vann:preferredNamespaceUri rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">Este vocabulario se utiliza para la descripción de territorios en España (incluyendo divisiones administrativas y también otros conceptos que se utilizan normalmente pero no tienen entidad jurídica, como por ejemplo barrios). Reutiliza términos de varios vocabularios y modelos que actualmente se utilizan para propósitos similares (y por tanto se irá actualizando de acuerdo con la evolución de estos vocabularios), incluyendo:
+        <rdfs:comment xml:lang="es">Este vocabulario se utiliza para la descripción de territorios en España (incluyendo divisiones administrativas y también otros conceptos que se utilizan normalmente pero no tienen entidad jurídica, como por ejemplo barrios). Reutiliza términos de varios vocabularios y modelos que actualmente se utilizan para propósitos similares (y por tanto se irá actualizando de acuerdo con la evolución de estos vocabularios), incluyendo:
 - schema.org
 - GeoSPARQL
 - GeoNames
@@ -36,22 +37,17 @@
 
 Esta ontología sufrirá cambios continuados hasta que se consiga un acuerdo suficiente sobre los términos que se incluyen en ella. También debe incluir términos definidos por comunidades autónomas y municipios (por ejemplo, entidades locales autónomas en Andalucía, juntas vecinales, concejos, pedanías, etc.)</rdfs:comment>
         <owl:versionInfo xml:lang="es">En esta ontología se han añadido los siguientes conceptos:
-- PartidoJudicial
-- Isla, y la referencia a su superclase dbpedia-owl:Island
-- Mancomunidad
-- AreaMetropolitana
+- ComunidadJurisdiccional
 
-También se han añadido las siguientes propiedades:
-- cabezaDePartidoJudicial
-- capital
-- isla
-- mancomunidad
-- areaMetropolitana
+También se han renombrado las siguientes propiedades:
+- codigoMunicipioINE se ha renombrado a codigoINE
+- codigoMunicipioCatastro se ha renombrado a codigoCatastro
 
-Asimismo, se han completado omisiones existentes en la versión anterior:
-- Algunos rangos para object properties como diseminado, provincia, etc.
+Se ha añadido la siguiente propiedad:
+- esCapitalDe
 
-Y se han añadido a la documentación asociada a las juntas administrativas algunos ejemplos, como la existencia de juntas municipales y juntas vecinales </owl:versionInfo>
+Y se ha incluido como aplicable la propiedad geonames:population para cualquier unidad territorial
+</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -257,6 +253,20 @@ Y se han añadido a la documentación asociada a las juntas administrativas algu
     
 
 
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe -->
+
+
+    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#sfWithin"/>
+        <owl:inverseOf rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#capital"/>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-08</terms:issued>
+        <rdfs:comment xml:lang="es">Especifica una unidad territorial de la que esta unidad territorial es capital</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="es">es capital de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado -->
 
 
@@ -453,30 +463,30 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro -->
 
 
-    <owl:DatatypeProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro">
+    <owl:DatatypeProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-04-15</terms:issued>
-        <rdfs:comment xml:lang="es">Código que asigna Catastro al Municipio, en caso de existir la relación.</rdfs:comment>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018-01-08</terms:issued>
+        <rdfs:comment xml:lang="es">Código que asigna Catastro a la entidad territorial, en caso de existir la relación.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎"/>
-        <rdfs:label xml:lang="es">código del Municipio según Catastro</rdfs:label>
+        <rdfs:label xml:lang="es">código de la entidad territorial según Catastro</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE -->
 
 
-    <owl:DatatypeProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE">
+    <owl:DatatypeProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-04-15</terms:issued>
-        <rdfs:comment xml:lang="es">Código del Municipio de tres dígitos del INE, definido en  http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls</rdfs:comment>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018-01-08</terms:issued>
+        <rdfs:comment xml:lang="es">Código de la entidad territorial del INE. Por ejemplo, para municipios este código es de tres dígitos y está definido en http://www.ine.es/daco/daco42/codmun/codmun09/09codmun.xls</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎"/>
-        <rdfs:label xml:lang="es">código del Municipio según el INE</rdfs:label>
+        <rdfs:label xml:lang="es">código de la entidad territorial según el INE</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -510,6 +520,17 @@ http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstad
         <rdfs:comment xml:lang="es">Un nombre en el idioma oficial local</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.geonames.org/ontology"/>
         <rdfs:label xml:lang="es">nombre oficial</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#population -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.geonames.org/ontology#population">
+        <rdfs:comment xml:lang="es">Número total de habitantes del núcleo según el nomenclátor del INE para el año que aparezca en los metadatos </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.geonames.org/ontology"/>
+        <rdfs:label xml:lang="es">población</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -851,6 +872,20 @@ Nota: Si existe una definición oficial de lo que es un área metropolitana, ser
         <rdfs:isDefinedBy rdf:resource="http://purl.org/derecho/vocabulario"/>
         <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
         <rdfs:label xml:lang="es">Comunidad Autónoma</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional -->
+
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional">
+        <rdfs:subClassOf rdf:resource="http://schema.org/AdministrativeArea"/>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-08</terms:issued>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las Comunidades Jurisdiccionales se definen como aquellos territorios con superficie propia cuya gestión o uso es realizado por varios municipios, provincias o es directamente estatal.
+Su existencia es el resultado de los trabajos de campo originales realizados para la delimitación de los municipios y su representación en la primera edición del Mapa Topográfico Nacional a escala 1:50.000 (fuente: Instituto Geográfico Nacional)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="es">Comunidad jurisdiccional</rdfs:label>
     </owl:Class>
     
 
@@ -1469,10 +1504,10 @@ Su nombre, que se especifica con la propiedad dct:title, es el proporcionado por
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     </owl:NamedIndividual>
     <rdf:Description>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HTML</rdfs:label>
     </rdf:Description>
     <rdf:Description>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HTML</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF</rdfs:label>
     </rdf:Description>
     
 
