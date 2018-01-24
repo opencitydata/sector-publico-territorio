@@ -189,10 +189,10 @@ rdfs:label rdf:type owl:AnnotationProperty .
 :estado rdf:type owl:ObjectProperty ;
         rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
         <http://purl.org/dc/terms/issued> "2014-04-15"^^xsd:string ;
-        rdfs:comment """Validez del elemento en su ciclo de vida (versión). Puede ser histórico, vigente o provisional. Se definen en el esquema de conceptos http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado y toman valores:
-http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/historico
-http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente
-http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/provisional"""@es ;
+        rdfs:comment """Validez del elemento en su ciclo de vida (versión). Puede ser histórico, vigente o provisional. Se definen en el esquema de conceptos http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipo-estado y toman valores:
+http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipo-estado/historico
+http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipo-estado/vigente
+http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipo-estado/provisional"""@es ;
         rdfs:isDefinedBy <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf> ;
         rdfs:label "estado"@es .
 

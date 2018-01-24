@@ -273,10 +273,10 @@ Y se ha incluido como aplicable la propiedad geonames:population para cualquier 
     <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#estado">
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-04-15</terms:issued>
-        <rdfs:comment xml:lang="es">Validez del elemento en su ciclo de vida (versión). Puede ser histórico, vigente o provisional. Se definen en el esquema de conceptos http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado y toman valores:
-http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/historico
-http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente
-http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/provisional</rdfs:comment>
+        <rdfs:comment xml:lang="es">Validez del elemento en su ciclo de vida (versión). Puede ser histórico, vigente o provisional. Se definen en el esquema de conceptos http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipo-estado y toman valores:
+http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipo-estado/historico
+http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipo-estado/vigente
+http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipo-estado/provisional</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf"/>
         <rdfs:label xml:lang="es">estado</rdfs:label>
     </owl:ObjectProperty>
