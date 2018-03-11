@@ -1,5 +1,5 @@
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/2002/07/owl#versionIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.6> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://www.w3.org/2002/07/owl#versionIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/creator> "David Portol\u00E9s (Idearium Consultores)" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> <http://purl.org/dc/elements/1.1/creator> "Esther Minguela (LocaliData)" .
@@ -557,7 +557,7 @@ _:genid30 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.
 _:genid30 <http://www.w3.org/2002/07/owl#onClass> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado> <http://purl.org/dc/terms/issued> "2014-04-15" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado> <http://www.w3.org/2000/01/rdf-schema#comment> "Edificaci\u00F3n o Vivienda de una Entidad Singular de poblaci\u00F3n que no puede ser incluido en el concepto de N\u00FAcleo [fuente: Modelo de Direcciones de la Administraci\u00F3n General del Estado v.2]\nSu identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos est\u00E1n recogidos por el INE en el Nomencl\u00E1tor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf\u200E> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado> <http://www.w3.org/2000/01/rdf-schema#label> "Diseminado"@es .
 # 
@@ -616,7 +616,7 @@ _:genid41 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.
 _:genid41 <http://www.w3.org/2002/07/owl#onClass> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva> <http://purl.org/dc/terms/issued> "2014-04-15" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva> <http://www.w3.org/2000/01/rdf-schema#comment> "Unidad intermedia entre el Municipio y la Entidad Singular, es la entidad de m\u00E1ximo nivel dentro de la Unidad Poblacional, agrupando a una o varias Entidades Singulares (parroquias, hermandades, anteiglesias...) [fuente: Modelo de Direcciones de la Administraci\u00F3n General del Estado v.2]\nSu identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos est\u00E1n recogidos por el INE en el Nomencl\u00E1tor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf\u200E> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva> <http://www.w3.org/2000/01/rdf-schema#label> "Entidad colectiva"@es .
 # 
@@ -650,7 +650,7 @@ _:genid48 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.
 _:genid48 <http://www.w3.org/2002/07/owl#onClass> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular> <http://purl.org/dc/terms/issued> "2014-04-15" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular> <http://www.w3.org/2000/01/rdf-schema#comment> "Cualquier \u00E1rea habitable del t\u00E9rmino municipal, habitada o, excepcionalmente, deshabitada, claramente diferenciada dentro del mismo, y que es conocida por una denominaci\u00F3n espec\u00EDfica que la identifica sin posibilidad de confusi\u00F3n [fuente: Modelo de Direcciones de la Administraci\u00F3n General del Estado v.2]\nSu identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos est\u00E1n recogidos por el INE en el Nomencl\u00E1tor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf\u200E> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular> <http://www.w3.org/2000/01/rdf-schema#label> "Entidad Singular"@es .
 # 
@@ -778,7 +778,7 @@ _:genid69 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.
 _:genid69 <http://www.w3.org/2002/07/owl#onClass> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion> <http://purl.org/dc/terms/issued> "2014-04-15" .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion> <http://www.w3.org/2000/01/rdf-schema#comment> "Conjunto de al menos diez edificaciones, que est\u00E9n formando calles, plazas y otras v\u00EDas urbanas. Excepcionalmente el n\u00FAmero de edificaciones podr\u00E1 ser inferior a 10 siempre que la poblaci\u00F3n de derecho supere los 50 habitantes [fuente: Modelo de Direcciones de la Administraci\u00F3n General del Estado v.2]\nSu identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos est\u00E1n recogidos por el INE en el Nomencl\u00E1tor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf\u200E> .
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion> <http://www.w3.org/2000/01/rdf-schema#label> "N\u00FAcleo de Poblaci\u00F3n"@es .
 # 
