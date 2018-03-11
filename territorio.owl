@@ -76,7 +76,7 @@ Esta ontología sufrirá cambios continuados hasta que se consiga un acuerdo suf
         <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html"/>
         <dcterms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.owl"/>
-        <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.6"/>
+        <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0."/>
         <vann:preferredNamespaceUri rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"/>
     </owl:Ontology>
     
@@ -893,7 +893,7 @@ Su existencia es el resultado de los trabajos de campo originales realizados par
         <dcterms:issued>2014-04-15</dcterms:issued>
         <rdfs:comment xml:lang="es">Edificación o Vivienda de una Entidad Singular de población que no puede ser incluido en el concepto de Núcleo [fuente: Modelo de Direcciones de la Administración General del Estado v.2]
 Su identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos están recogidos por el INE en el Nomenclátor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/"/>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎"/>
     </owl:Class>
     
@@ -972,7 +972,7 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
         <dcterms:issued>2014-04-15</dcterms:issued>
         <rdfs:comment xml:lang="es">Unidad intermedia entre el Municipio y la Entidad Singular, es la entidad de máximo nivel dentro de la Unidad Poblacional, agrupando a una o varias Entidades Singulares (parroquias, hermandades, anteiglesias...) [fuente: Modelo de Direcciones de la Administración General del Estado v.2]
 Su identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos están recogidos por el INE en el Nomenclátor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/"/>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎"/>
     </owl:Class>
     
@@ -1018,7 +1018,7 @@ Su identificador se especifica con la propiedad dct:identifier, y su nombre se e
         <dcterms:issued>2014-04-15</dcterms:issued>
         <rdfs:comment xml:lang="es">Cualquier área habitable del término municipal, habitada o, excepcionalmente, deshabitada, claramente diferenciada dentro del mismo, y que es conocida por una denominación específica que la identifica sin posibilidad de confusión [fuente: Modelo de Direcciones de la Administración General del Estado v.2]
 Su identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos están recogidos por el INE en el Nomenclátor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/"/>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎"/>
     </owl:Class>
     
@@ -1196,7 +1196,7 @@ Su nombre, que se especifica con la propiedad dct:title, es el proporcionado por
         <dcterms:issued>2014-04-15</dcterms:issued>
         <rdfs:comment xml:lang="es">Conjunto de al menos diez edificaciones, que estén formando calles, plazas y otras vías urbanas. Excepcionalmente el número de edificaciones podrá ser inferior a 10 siempre que la población de derecho supere los 50 habitantes [fuente: Modelo de Direcciones de la Administración General del Estado v.2]
 Su identificador se especifica con la propiedad dct:identifier, y su nombre se especifica con la propiedad dct:title. Ambos están recogidos por el INE en el Nomenclátor de Unidades Poblacionales, en http://www.ine.es/nomen2/index.do</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio/"/>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ign.es/ign/resources/acercaDe/tablon/ModeloDireccionesAGE.pdf‎"/>
     </owl:Class>
     
