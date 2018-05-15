@@ -1,6 +1,9 @@
 <h2 id="overv" class="list">Territorio: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This ontology has the following classes and properties.</span>
+<p>Las principales clases de este vocabulario definen los principales tipos de territorios que se pueden encontrar en España: país, autonomías (incluyendo comunidades y ciudades autónomas), provincias, comarcas y municipios (incluyendo específicamente las ciudades). Dentro de los municipios, este vocabulario considera las entidades colectivas y singulares, núcleos poblaciones y diseminados, distritos, barrios, juntas administrativas y, finalmente, las secciones censales (que son utilizadas por los institutos de estadística).</p>
+<p>Todas estas clases están relacionadas, siempre que es posible, con las clases que han sido definidas en los vocabularios que este vocabulario extiende (por ejemplo, país está relacionado con la clase Country de DBpedia y, por su relación de equivalencia, con la clase Country de schema.org).</p>
+<p>Asimismo, todas estas clases son disjuntas entre sí, y todas son subclases de la clase Feature de GeoNames, lo que indica que todas tienen una componente territorial (pueden tener geometrías asociadas, por ejemplo). </p>
+<p>Con respecto a las propiedades, en este vocabulario se definen una serie de propiedades que extienden la propiedad sfWithin de GeoSPARQL, que indica que un elemento (un fenómeno geográfico) está dentro de otro. Así, se definen las propiedades pais, autonomia, provincia, comarca, municipio, etc. (todas ellas con minúsculas), para representar que un determinado objeto o fenómeno (su dominino no se especifica) está dentro del fenómeno geográfico correspondiente. Finalmente, se definen tres propiedades muy específicas, que proceden del modelo de direcciones de la Administración General del Estado (el estado de cualquier territorio - histórico, vigente o provisional -, el código INE de los municipios y el código de Catastro de los municipios).</p></span>
 <h4>Classes</h4>
 <ul class="hlist">
    <li>
