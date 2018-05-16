@@ -10,3 +10,4 @@ Por tanto, se pretende con esto llevar un control de cambios entre versiones.
 ### Lista de cambios:
 * [12/03/2018] Actualización de referencias a las URIs donde se encuentra publicada la última versión.
 * [26/04/2018] Aceptado pull request de OnToology para actualizar la documentación [[OnToology update #8](https://github.com/opencitydata/sector-publico-territorio/pull/8)]
+* [16/05/2018] Regenerada documentación [[Documentation Update #10]](https://github.com/opencitydata/sector-publico-territorio/pull/10)
