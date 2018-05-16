@@ -1,3 +1,165 @@
-<h2 id="desc" class="list">Vocabulario para la representación de datos de territorio (incluyendo divisiones administrativas) en España: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+<h2 id="desc" class="list">Territorio: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>La siguiente figura muestra las principales clases definidas en este vocabulario (todas ellas utilizando el prefijo esadm), así como su relación con la taxonomía de clases de las ontologías de GeoNames, schema.org y DBpedia.</p>
+
+<!--<center><img src="images/diagramClasesCallejero.png"></center>-->
+<center><img src="./images/diagramaClasesTerritorio.png"></center>
+
+<p>Y en la siguiente figura se muestran las propiedades definidas en este vocabulario, tal y como se ha descrito anteriormente. Asimismo hemos incluido en la imagen algunas de las propiedades que son relevantes para las clases que son subclase de la clase Feature de GeoNames, como featureClass, featureCode, name, officialName, etc. Concretamente, en el caso de featureCode, hemos especificado los códigos con los que se relacionan de la ontología de GeoNames. Y para no hacer la lectura de la imagen muy complicada, se ha omitido el valor de la propiedad featureClass, aunque en los ejemplos de la sección 3.1 se incluyen. En estos casos, la featureClass se relaciona con los recursos geonames:A para las regiones, y geonames:P para las entidades que se incluyen dentro de los municipios.</p>
+<p>También se pueden utilizar, y se recomienda utilizar, propiedades generales de Dublin Core (por ejemplo, dct:title y dct:identifier) y otras propiedades generales como rdfs:label, rdfs:comment, owl:sameAs, etc. Finalmente, no se muestra la propiedad esadm:estado, que permite identificar el tipo de estado de un recurso, de acuerdo con un esquema de conceptos SKOS que identifica estados vigente, histórico y provisional, tal y como se propone en el modelo de direcciones de la Administración General del Estado v.2.</p>
+
+<!--<center><img src="images/diagramPropiedadesCallejero.png"></center>-->
+<center><img src="./images/diagramaPropiedadesTerritorio.png"></center>
+
+<h3>3.1 Ejemplos de uso<span class="backlink"> back to <a href="#toc">ToC</a></span></h3>
+<p>A continuación mostramos algunos ejemplos del uso de algunas de estas clases y propiedades, con ejemplos procedentes de los portales de datos abiertos de Zaragoza y OpenDataAragón. Comenzaremos por las autonomías, e iremos bajando poco a poco hasta el nivel de la sección censal. Utilizaremos en todos estos ejemplos el formato <a href="http://www.w3.org/TR/turtle/" target="_blank">Turtle<a></p>
+    <p>Veamos cómo podemos representar la autonomía de Aragón. Como se puede ver, declaramos que es una instancia de nuestra clase <a href="#ComunidadAutonoma" title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadAutonoma">esadm:ComunidadAutonoma</a>, que es equivalente al recurso correspondiente en <a href="http://datos.gob.es/" target="_blank">http://datos.gob.es/</a>, que tiene como geonames:featureCode una referencia al recurso geonames:A.ADMD, como se presentaba en una de las imágenes previas, y como geonames:featureClass una referencia al recurso geonames:A, y que tiene una serie de datos que parecen "repetidos", como su nombre común y nombre oficial. Esta "repetición" de los mismos valores con distintas propiedades es algo que permite facilitar el acceso a nuestros datos a aplicaciones que utilizan unos u otros vocabularios. Finalmente, el estado de este recurso es vigente, en el sentido de que la comunidad autónoma existe en la actualidad. Otros posibles estados son histórico y provisional.</p>
+    
+    <pre>
+        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Autonomia/Aragon&gt;
+        a                      esadm:ComunidadAutonoma ;
+        owl:sameAs             &lt;http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon&gt ;
+        owl:sameAs             &lt;http://eurostat.linked-statistics.org/dic/geo#ES24&gt;
+        geonames:featureCode   &lt;http://www.geonames.org/ontology#A.ADMD&gt; ;
+        geonames:featureClass  &lt;http://www.geonames.org/ontology#A&gt; ;
+        esadm:estado           &lt;http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente&gt; ;
+        dcterms:identifier	   "XXXX" ; #TODO: no sé cuál se puede usar para una autonomía
+        geonames:officialName  "Aragón" ;
+        dcterms:title          "Aragón" ;
+        geonames:name          "Comunidad Autónoma de Aragón" ;
+        rdfs:label             "Comunidad Autónoma de Aragón" ;
+        esadm:pais             &lt;http://datos.gob.es/recurso/sector-publico/territorio/Pais/España&gt; .
+    </pre>
+    <p>A continuación proporcionamos el detalle correspondiente a la provincia de Zaragoza. Podemos ver que el dcterms:identifier es 50, que es el que corresponde a esta provincia según el INE.</p>
+    <pre>
+        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Provincia/Zaragoza&gt;
+        a                      esadm:Provincia ;
+        owl:sameAs             &lt;http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Zaragoza&gt ;
+        owl:sameAs             &lt;http://eurostat.linked-statistics.org/dic/geo#ES243&gt;
+        geonames:featureCode   &lt;http://www.geonames.org/ontology#A.ADMD&gt; ;
+        geonames:featureClass  &lt;http://www.geonames.org/ontology#A&gt; ;
+        esadm:estado           &lt;http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente&gt; ;
+        dcterms:identifier	   "50" ;
+        geonames:officialName  "Zaragoza" ;
+        dcterms:title          "Zaragoza" ;
+        geonames:name          "Provincia de Zaragoza" ;
+        rdfs:label             "Provincia de Zaragoza" ;
+        esadm:autonomia        &lt;http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon&gt; ;
+        esadm:pais             &lt;http://datos.gob.es/recurso/sector-publico/territorio/Pais/España&gt; .
+    </pre>
+    
+    <p>Bajamos a la comarca en la que se sitúa la ciudad de Zaragoza, que se denomina D.C. Zaragoza. En este caso ya no añadimos el owl:sameAs a datos de datos.gob.es, puesto que no se llega a este nivel de detalle. </p>
+    <pre>
+        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Comarca/D.C._Zaragoza&gt;
+        a                      esadm:Comarca ;
+        geonames:featureCode   &lt;http://www.geonames.org/ontology#A.ADMD&gt; ;
+        geonames:featureClass  &lt;http://www.geonames.org/ontology#A&gt; ;
+        esadm:estado           &lt;http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente&gt; ;
+        dcterms:identifier	   "XXXX" ; #TODO: no sé cuál se puede usar para una comarca
+        geonames:officialName  "D.C. Zaragoza" ;
+        dcterms:title          "D.C. Zaragoza" ;
+        geonames:name          "Delimitación Comarcal de Zaragoza" ;
+        rdfs:label             "Delimitación Comarcal de Zaragoza" ;
+        esadm:provincia        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Provincia/Zaragoza&gt; ;
+        esadm:autonomia        &lt;http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon&gt; ;
+        esadm:pais             &lt;http://datos.gob.es/recurso/sector-publico/territorio/Pais/España&gt; .
+    </pre>
+    
+    <p>Seguimos llegando a mayor nivel de detalle y nos centramos ahora en municipios, y concretamente en el municipio de Zaragoza. De nuevo, seguimos utilizando datos e identificadores procedentes del portal de datos abiertos de Aragón. En este caso decimos explícitamente que Zaragoza es una esadm:Ciudad, algo que es redundante, puesto que en nuestro vocabulario ya hemos definido que esadm:Ciudad es una subclase de esadm:Municipio. Esto puede ser útil, de nuevo, para facilitar a los sistemas que utilicen SPARQL encontrar esta información, sobre todo en el caso de que no tengan activada la posibilidad de realizar inferencias. </p>
+    <p>También se puede observar que, como en el caso anterior, añadimos muchas propiedades que se pueden inferir fácilmente al considerar la propiedad geosparql:sfWithin como una propiedad transitiva (por ejemplo, si decimos que Zaragoza pertenece a la comarca D.C. Zaragoza, y esta comarca pertenece a la provincia de Zaragoza, y esta provincia a la comunidad autónoma de Aragón, podemos inferir que la ciudad de Zaragoza pertenece a todos estos territorios simplemente mediante la especificación de que pertenece a la comarca). Sin embargo, esto simplifica el tipo de consultas SPARQL que podemos ejecutar sobre estos datos.</p>
+    <p>Finalmente, podemos ver que ahora el valor de la propiedad featureCode de GeoNames es geonames:P.PPL</p>
+    <pre>
+        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt;
+        a                             esadm:Municipio, esadm:Ciudad ;
+        geonames:featureCode          &lt;http://www.geonames.org/ontology#P.PPL&gt; ;
+        geonames:featureClass         &lt;http://www.geonames.org/ontology#P&gt; ;
+        esadm:estado                  &lt;http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente&gt; ;
+        dcterms:identifier	          "50297" ;
+        esadm:codigoMunicipioINE      "50297" ;
+        esadm:codigoMunicipioCatastro "50900" ;
+        geonames:officialName         "Zaragoza" ;
+        dcterms:title                 "Zaragoza" ;
+        geonames:name                 "Zaragoza" ;
+        rdfs:label                    "Zaragoza" ;
+        esadm:comarca                 &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Comarca/D.C._Zaragoza&gt; ;
+        esadm:provincia               &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Provincia/Zaragoza&gt; ;
+        esadm:autonomia               &lt;http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon&gt; ;
+        esadm:pais                    &lt;http://datos.gob.es/recurso/sector-publico/territorio/Pais/España&gt; .
+    </pre>
+    <p>A partir de este momento pasamos a considerar datos que pertenecen y son ofrecidos por el portal de datos abiertos de la ciudad de Zaragoza. Concretamente veremos cómo podemos utilizar este vocabulario para representar información de distritos, barrios, juntas administrativas y secciones censales.</p>
+    <p>Comenzamos incluyendo un ejemplo de un distrito, concretamente el distrito 12 de Zaragoza. Se puede observar que la URI de este distrito comienza ahora por www.zaragoza.es/api/, que es la base de la propuesta de datos abiertos del ayuntamiento de Zaragoza.</p>
+    
+    <pre>
+        &lt;http://www.zaragoza.es/api/recurso/sector-publico/territorio/Distrito/12&gt;
+        a                      esadm:Distrito ;
+        geonames:featureCode   &lt;http://www.geonames.org/ontology#P.PPLX&lt; ;
+        geonames:featureClass  &lt;http://www.geonames.org/ontology#P&gt; ;
+        esadm:estado           &lt;http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente&gt; ;
+        dcterms:identifier     "12" ;
+        geonames:officialName  "Barrios Rurales Oeste" ;
+        dcterms:title          "Barrios Rurales Oeste" ;
+        geonames:name          "Distrito Barrios Rurales Oeste" ;
+        rdfs:label             "Distrito Barrios Rurales Oeste" ;
+        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; ;
+        esadm:comarca          &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Comarca/D.C._Zaragoza&gt; ;
+        esadm:provincia        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Provincia/Zaragoza&gt; ;
+        esadm:autonomia        &lt;http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon&gt; ;
+        esadm:pais             &lt;http://datos.gob.es/recurso/sector-publico/territorio/Pais/España&gt; .
+    </pre>
+    
+    <p>Aunque anteriormente hemos añadido información de comarca, provincia, autonomía y país, realmente no es habitual que se incluya este tipo de información cuando nos encontramos ya en un nivel territorial por debajo del municipio, y la recomendación principal sería la de sólo hacer referencia al municipio, mediante esadm:municipio.</p>
+    <p>A continuación pasamos a describir un barrio de Zaragoza, concretamente el barrio Villarrapa. En el caso de que un barrio esté contenido dentro de un distrito (algo que no ocurre siempre), añadiríamos una tripleta más esadm:distrito &lt;&lt;URIMunicipio&gt;&gt;</p>
+    <pre>
+        &lt;http://www.zaragoza.es/api/recurso/sector-publico/territorio/Barrio/32&gt;
+        a                      esadm:Barrio ;
+        geonames:featureCode   &lt;http://www.geonames.org/ontology#P.PPLX&gt; ;
+        geonames:featureClass  &lt;http://www.geonames.org/ontology#P&gt; ;
+        esadm:estado           &lt;http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente&gt; ;
+        dcterms:identifier	   "32" ;
+        geonames:officialName  "Villarrapa" ;
+        dcterms:title          "Villarrapa" ;
+        geonames:name          "Barrio Villarrapa" ;
+        rdfs:label             "Barrio Villarrapa" ;
+        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; .
+    </pre>
+    
+    <p>Y terminaremos con la junta de vecinos Montañana. En este caso todos los tipos de nombre coinciden, aunque no tiene por qué ser el caso. Como en el caso anterior, si una junta está dentro de un distrito (algo que no ocurre siempre), añadiríamos una tripleta más esadm:distrito &lt;&lt;URIMunicipio&gt;&gt;, y algo similar se haría si alguna pertenece a algún barrio, con esadm:barrio.</p>
+    <pre>
+        &lt;http://www.zaragoza.es/api/recurso/sector-publico/territorio/JuntaAdministrativa/20&gt;
+        a                      esadm:JuntaAdministrativa ;
+        geonames:featureCode   &lt;http://www.geonames.org/ontology#P.PPLX&gt; ;
+        geonames:featureClass  &lt;http://www.geonames.org/ontology#P&gt; ;
+        esadm:estado           &lt;http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente&gt; ;
+        dcterms:identifier     "20" ;
+        geonames:officialName  "Junta de Vecinos MONTAÑANA" ;
+        dc:title               "Junta de Vecinos MONTAÑANA" ;
+        geonames:name          "Junta de Vecinos MONTAÑANA" ;
+        rdfs:label             "Junta de Vecinos MONTAÑANA" ;
+        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; .
+    </pre>
+    <p>Finalmente, vamos a ver cómo se representaría una sección censal. En todos los casos, las secciones censales se consideran para todos los efectos dentro de un distrito, por lo que su URI puede contener la referencia al Distrito también, para que sea una URI cool. </p>
+    <pre>
+        &lt;http://www.zaragoza.es/api/recurso/sector-publico/territorio/Distrito/12/SeccionCensal/001&gt;
+        a                      esadm:SeccionCensal ;
+        geonames:featureCode   &lt;http://www.geonames.org/ontology#P.PPLX&gt; ;
+        geonames:featureClass  &lt;http://www.geonames.org/ontology#P&gt; ;
+        esadm:estado           &lt;http://vocab.linkeddata.es/datosabiertos/kos/sector-publico/territorio/tipoEstado/vigente&gt; ;
+        dcterms:identifier     "50297312001" ;
+        geonames:officialName  "Distrito 12 - Sección censal 001" ;
+        dc:title               "Distrito 12 - Sección censal 001" ;
+        geonames:name          "Distrito 12 - Sección censal 001" ;
+        rdfs:label             "Distrito 12 - Sección censal 001" ;
+        esadm:distrito         &lt;http://www.zaragoza.es/api/recurso/sector-publico/territorio/Distrito/12&gt; .
+        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; .
+    </pre>
+    
+    <p>Con esto hemos proporcionado un buen número de ejemplos sobre unidades territoriales, aunque también hemos dejado fuera algunas de las clases y propiedades definidas en este vocabulario, como por ejemplo esadm:CiudadAutonoma, que sería aplicable a Ceuta y Melilla, o algunos otros conceptos como esadm:EntidadColectiva, esadm:EntidadSingular, esadm:NucleoPoblacion y esadm:Diseminado.</p>
+    
+    <p>Asimismo, para cualquiera de estos recursos podemos representar, si disponemos de esta información, su geometría, para lo cual se recomienda también el uso de GeoSPARQL. Por ejemplo, si queremos representar la información geográfica del municipio de Zaragoza, podríamos representarla de la siguiente manera:
+    <pre>
+        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt;
+        geosparql:hasGeometry         &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza/geometria&gt; .
+        
+        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza/geometria&gt;
+        a      sf:Polygon ;
+        geosparql:asWKT "XXXXXXXXXXXXXXXXXX"^^geosparql:wktLiteral. #TODO: A rellenar la representación WKT de Zaragoza.
+    </pre>
