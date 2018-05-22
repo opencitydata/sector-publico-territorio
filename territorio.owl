@@ -73,6 +73,13 @@ Esta ontología sufrirá cambios continuados hasta que se consiga un acuerdo suf
         <dc:creator>José María Subero (Gobierno de Aragón)</dc:creator>
         <dc:creator>Oscar Corcho (Ontology Engineering Group - Universidad Politécnica de Madrid, LocaliData)</dc:creator>
         <dc:title xml:lang="es">Vocabulario para la representación de datos de territorio (incluyendo divisiones administrativas) en España</dc:title>
+		<dc:description>Este vocabulario se utiliza para la descripción de territorios en España (incluyendo divisiones administrativas y también otros conceptos que se utilizan normalmente pero no tienen entidad jurídica, como por ejemplo barrios). Reutiliza términos de varios vocabularios y modelos que actualmente se utilizan para propósitos similares (y por tanto se irá actualizando de acuerdo con la evolución de estos vocabularios), incluyendo:
+- schema.org
+- GeoSPARQL
+- GeoNames
+- DBpedia
+- Ontología Jurídica Libre
+- Modelo de direcciones de la Administración General del Estado v.2</dc:description>
         <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.html"/>
         <dcterms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio.owl"/>
