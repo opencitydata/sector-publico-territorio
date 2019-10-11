@@ -119,7 +119,12 @@
         dcterms:title          "Villarrapa" ;
         geonames:name          "Barrio Villarrapa" ;
         rdfs:label             "Barrio Villarrapa" ;
-        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; .
+        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; ;
+        esadm:comarca          &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Comarca/D.C._Zaragoza&gt; ;
+        esadm:provincia        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Provincia/Zaragoza&gt; ;
+        esadm:autonomia        &lt;http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon&gt; ;
+        esadm:pais             &lt;http://datos.gob.es/recurso/sector-publico/territorio/Pais/España&gt; .
+
     </pre>
     
     <p>Y terminaremos con la junta de vecinos Montañana. En este caso todos los tipos de nombre coinciden, aunque no tiene por qué ser el caso. Como en el caso anterior, si una junta está dentro de un distrito (algo que no ocurre siempre), añadiríamos una tripleta más esadm:distrito &lt;&lt;URIMunicipio&gt;&gt;, y algo similar se haría si alguna pertenece a algún barrio, con esadm:barrio.</p>
@@ -134,7 +139,12 @@
         dc:title               "Junta de Vecinos MONTAÑANA" ;
         geonames:name          "Junta de Vecinos MONTAÑANA" ;
         rdfs:label             "Junta de Vecinos MONTAÑANA" ;
-        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; .
+        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; ;
+        esadm:comarca          &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Comarca/D.C._Zaragoza&gt; ;
+        esadm:provincia        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Provincia/Zaragoza&gt; ;
+        esadm:autonomia        &lt;http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon&gt; ;
+        esadm:pais             &lt;http://datos.gob.es/recurso/sector-publico/territorio/Pais/España&gt; .
+
     </pre>
     <p>Finalmente, vamos a ver cómo se representaría una sección censal. En todos los casos, las secciones censales se consideran para todos los efectos dentro de un distrito, por lo que su URI puede contener la referencia al Distrito también, para que sea una URI cool. </p>
     <pre>
@@ -149,7 +159,12 @@
         geonames:name          "Distrito 12 - Sección censal 001" ;
         rdfs:label             "Distrito 12 - Sección censal 001" ;
         esadm:distrito         &lt;http://www.zaragoza.es/api/recurso/sector-publico/territorio/Distrito/12&gt; ;
-        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; .
+        esadm:municipio        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Municipio/Zaragoza&gt; ;
+        esadm:comarca          &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Comarca/D.C._Zaragoza&gt; ;
+        esadm:provincia        &lt;http://opendata.aragon.es/recurso/sector-publico/territorio/Provincia/Zaragoza&gt; ;
+        esadm:autonomia        &lt;http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon&gt; ;
+        esadm:pais             &lt;http://datos.gob.es/recurso/sector-publico/territorio/Pais/España&gt; .
+
     </pre>
     
     <p>Con esto hemos proporcionado un buen número de ejemplos sobre unidades territoriales, aunque también hemos dejado fuera algunas de las clases y propiedades definidas en este vocabulario, como por ejemplo esadm:CiudadAutonoma, que sería aplicable a Ceuta y Melilla, o algunos otros conceptos como esadm:EntidadColectiva, esadm:EntidadSingular, esadm:NucleoPoblacion y esadm:Diseminado.</p>
