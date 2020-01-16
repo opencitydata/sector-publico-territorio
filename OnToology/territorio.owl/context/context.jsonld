@@ -19,6 +19,10 @@
     "versionInfo" : {
       "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
+    "esCapitalDe" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#esCapitalDe",
+      "@type" : "@id"
+    },
     "PartidoJudicial" : {
       "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#PartidoJudicial"
     },
@@ -127,6 +131,9 @@
     "CiudadAutonoma" : {
       "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#CiudadAutonoma"
     },
+    "codigoCatastro" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoCatastro"
+    },
     "GovernmentalAdministrativeRegion" : {
       "@id" : "http://dbpedia.org/ontology/GovernmentalAdministrativeRegion"
     },
@@ -147,8 +154,8 @@
     "rights" : {
       "@id" : "http://purl.org/dc/elements/1.1/rights"
     },
-    "codigoMunicipioCatastro" : {
-      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioCatastro"
+    "ComunidadJurisdiccional" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#ComunidadJurisdiccional"
     },
     "Distrito" : {
       "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito"
@@ -168,6 +175,9 @@
     },
     "isDefinedBy" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "population" : {
+      "@id" : "http://www.geonames.org/ontology#population"
     },
     "Island" : {
       "@id" : "http://dbpedia.org/ontology/Island"
@@ -228,6 +238,9 @@
     "State" : {
       "@id" : "http://schema.org/State"
     },
+    "codigoINE" : {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoINE"
+    },
     "Barrio" : {
       "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio"
     },
@@ -240,11 +253,11 @@
     "AdministrativeArea" : {
       "@id" : "http://schema.org/AdministrativeArea"
     },
-    "codigoMunicipioINE" : {
-      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#codigoMunicipioINE"
-    },
     "Comarca" : {
       "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Comarca"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/elements/1.1/description"
     },
     "preferredNamespaceUri" : {
       "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
